@@ -1,0 +1,360 @@
+/* ============================================================
+   welcome.css — E-CRANE Totem · Tela 0: Boas-Vindas
+   ============================================================ */
+
+body.welcome-page {
+  position: relative;
+  min-height: 100vh;
+}
+
+.welcome-bg {
+  position: fixed;
+  inset: 0;
+  background: url("../assets/images/bg-img-boas-vindas.png") center center / cover no-repeat;
+  z-index: -1;
+}
+
+.topbar,
+.welcome,
+.welcome__footer {
+  width: min(1224px, calc(100vw - 48px));
+  margin: 0 auto;
+}
+
+.topbar {
+  padding-top: 0;
+}
+
+.topbar__container {
+  min-height: 64px;
+  background: var(--color-surface);
+  border: 1px solid rgba(152, 156, 159, 0.2);
+  border-top: 0;
+  border-radius: 0 0 8px 8px;
+  padding: 8px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+.lang-picker {
+  justify-self: start;
+  position: relative;
+}
+
+.lang {
+  border: 1px solid rgba(152, 156, 159, 0.2);
+  border-radius: 4px;
+  background: var(--neutral-100);
+  padding: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: #212121;
+  font: 500 16px/1.5 var(--font-family);
+  white-space: nowrap;
+  transition: background 150ms, transform 150ms;
+}
+
+.lang:active {
+  transform: scale(0.97);
+  background: var(--neutral-200);
+}
+
+.lang__flag {
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+}
+
+.lang__chevron {
+  width: 16px;
+  height: 16px;
+  transition: transform 200ms;
+}
+
+.lang[aria-expanded="true"] .lang__chevron {
+  transform: rotate(180deg);
+}
+
+/* Dropdown */
+.lang-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  min-width: 160px;
+  background: var(--color-surface);
+  border: 1px solid rgba(152, 156, 159, 0.25);
+  border-radius: 8px;
+  padding: 4px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06);
+  z-index: 100;
+}
+
+.lang-menu.is-open {
+  display: block;
+}
+
+.lang-menu__item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 6px;
+  font: 500 15px/1 var(--font-family);
+  color: #212121;
+  background: transparent;
+  border: none;
+  cursor: none;
+  text-align: left;
+  transition: background 120ms;
+}
+
+.lang-menu__item:active {
+  background: var(--neutral-100);
+  transform: scale(0.98);
+}
+
+.lang-menu__item.is-selected {
+  background: var(--neutral-100);
+}
+
+.lang-menu__item img {
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+.topbar__logo {
+  width: 156px;
+  height: 33px;
+  justify-self: center;
+}
+
+.topbar__right {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  width: 198px;
+  justify-content: flex-end;
+}
+
+.clock {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #000;
+  font: 500 16px/1.5 var(--font-family);
+}
+
+.clock__icon {
+  width: 24px;
+  height: 24px;
+}
+
+.home-btn {
+  width: 64px;
+  height: 64px;
+  border: 1.5px solid rgba(152, 156, 159, 0.2);
+  border-radius: 4px;
+  background: #1a171b;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.home-btn:active {
+  transform: scale(0.97);
+  opacity: 0.95;
+}
+
+.home-btn img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
+
+.welcome {
+  min-height: calc(100vh - 129px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 96px 0 120px;
+}
+
+.welcome__card {
+  width: min(600px, calc(100vw - 72px));
+  border-radius: 8px;
+  border: 1px solid rgba(152, 156, 159, 0.2);
+  background: var(--color-surface);
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.16);
+}
+
+.welcome__content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.welcome__icon-wrap {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  background: var(--neutral-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome__icon {
+  width: 40px;
+  height: 40px;
+}
+
+.welcome__text-group {
+  width: 100%;
+  text-align: center;
+}
+
+.welcome__title {
+  color: #1a171b;
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.welcome__subtitle {
+  color: #545454;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+.welcome__btn {
+  width: 100%;
+  min-height: 72px;
+  border-radius: 4px;
+  border: 1px solid rgba(152, 156, 159, 0.2);
+  background: #000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px 40px;
+  text-decoration: none;
+  color: #fff;
+  font: 500 16px/1.5 var(--font-family);
+  transition: transform 150ms ease, opacity 150ms ease;
+}
+
+.welcome__btn:active {
+  transform: scale(0.98);
+  opacity: 0.93;
+}
+
+.welcome__btn-arrow {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
+
+.welcome__footer {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}
+
+.welcome__footer-inner {
+  height: 65px;
+  border-top: 1px solid rgba(152, 156, 159, 0.2);
+  border-left: 1px solid rgba(152, 156, 159, 0.2);
+  border-right: 1px solid rgba(152, 156, 159, 0.2);
+  border-radius: 8px 8px 0 0;
+  background: var(--color-surface);
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #171717;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.welcome__footer-right strong {
+  font-weight: 700;
+}
+
+/* Efeito pulsante — Boas-Vindas (base-style-guide § 6.3) */
+.btn-pulse {
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(23, 23, 23, 0.25); }
+  50%       { box-shadow: 0 0 0 12px rgba(23, 23, 23, 0); }
+}
+
+@media (max-width: 1280px) {
+  .topbar,
+  .welcome,
+  .welcome__footer {
+    width: min(1224px, calc(100vw - 24px));
+  }
+
+  .topbar__right {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 900px) {
+  .topbar__container {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    justify-items: center;
+  }
+
+  .lang,
+  .topbar__right {
+    justify-self: center;
+  }
+
+  .welcome {
+    padding-top: 32px;
+  }
+
+  .welcome__title {
+    font-size: 36px;
+  }
+
+  .welcome__footer {
+    position: static;
+    transform: none;
+    margin-bottom: 0;
+  }
+
+  .welcome__footer-inner {
+    height: auto;
+    padding: 16px 20px;
+    gap: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

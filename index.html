@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boas-Vindas — E-CRANE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/welcome.css">
+</head>
+<body class="welcome-page page-enter">
+
+  <div class="welcome-bg" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="topbar__container">
+      <div class="lang-picker">
+        <button class="lang touchable" id="language-trigger" type="button" aria-label="Selecionar idioma" aria-haspopup="listbox" aria-expanded="false">
+          <img src="assets/icons/Brazil Icon.svg" alt="Bandeira do Brasil" class="lang__flag">
+          <span class="lang__label" data-lang-label>Portugues</span>
+          <img src="assets/icons/keyboard_arrow_down.svg" alt="" aria-hidden="true" class="lang__chevron">
+        </button>
+
+        <div class="lang-menu" id="language-menu" role="listbox" aria-label="Idiomas disponíveis">
+          <button
+            class="lang-menu__item touchable is-selected"
+            type="button"
+            role="option"
+            aria-selected="true"
+            data-lang="pt-BR"
+            data-lang-label="Portugues"
+            data-lang-flag="assets/icons/Brazil Icon.svg"
+            data-lang-flag-alt="Bandeira do Brasil"
+          >
+            <img src="assets/icons/Brazil Icon.svg" alt="" aria-hidden="true">
+            <span>Portugues</span>
+          </button>
+
+          <button
+            class="lang-menu__item touchable"
+            type="button"
+            role="option"
+            aria-selected="false"
+            data-lang="en-US"
+            data-lang-label="English"
+            data-lang-flag="assets/icons/Estados Unidos.svg"
+            data-lang-flag-alt="Bandeira dos Estados Unidos"
+          >
+            <img src="assets/icons/Estados Unidos.svg" alt="" aria-hidden="true">
+            <span>English</span>
+          </button>
+        </div>
+      </div>
+
+      <img src="assets/logos/logo-ecrane-black.svg" alt="E-CRANE" class="topbar__logo">
+
+      <div class="topbar__right">
+        <div class="clock" aria-label="Horário atual">
+          <img src="assets/icons/schedule.svg" alt="" aria-hidden="true" class="clock__icon">
+          <span id="totem-time">10:32</span>
+        </div>
+        <button class="home-btn touchable" type="button" aria-label="Início">
+          <img src="assets/icons/home.svg" alt="" aria-hidden="true">
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="welcome" aria-label="Boas-vindas">
+    <section class="welcome__card">
+      <div class="welcome__content">
+        <div class="welcome__icon-wrap">
+          <img src="assets/icons/account_circle.svg" alt="" aria-hidden="true" class="welcome__icon">
+        </div>
+
+        <div class="welcome__text-group">
+          <h1 class="welcome__title">Seja bem-vindo!</h1>
+          <p class="welcome__subtitle">Explore nossos produtos, tecnologia e soluções globais de movimentação de materiais.</p>
+        </div>
+      </div>
+
+      <a href="#" class="welcome__btn touchable btn-pulse" aria-label="Toque para iniciar">
+        <span>Toque para iniciar</span>
+        <img src="assets/icons/arrow_forward.svg" alt="" aria-hidden="true" class="welcome__btn-arrow">
+      </a>
+    </section>
+  </main>
+
+  <footer class="welcome__footer">
+    <div class="welcome__footer-inner">
+      <span class="welcome__footer-left">© 2026 E-CRANE - Todos os direitos reservados</span>
+      <span class="welcome__footer-right">Site desenvolvido por <strong>Mukutu</strong></span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>
