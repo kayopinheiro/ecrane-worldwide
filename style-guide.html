@@ -672,9 +672,139 @@
     </div>
   </div>
 
+  <!-- ══════════════════════════════════════════════════════
+       12. SCROLLBAR
+  ═══════════════════════════════════════════════════════════ -->
+  <div class="sg-section">
+    <p class="sg-section__label">12</p>
+    <h2 class="sg-section__title">Scrollbar — Touch Navigation</h2>
+    <p class="sg-section__desc">Componente fixo no lado direito da tela. Aparece quando o conteúdo excede a altura visível. Controlado via JS: <code>.is-visible</code> ativa a exibição.</p>
+
+    <div class="sg-scrollbar-demo">
+
+      <!-- Área de preview com container simulado -->
+      <div class="sg-scrollbar-preview">
+        <div class="sg-scrollbar-content" id="sg-scroll-content">
+          <p class="sg-scrollbar-content__label">Conteúdo rolável</p>
+          <div class="sg-scrollbar-content__block"></div>
+          <div class="sg-scrollbar-content__block"></div>
+          <div class="sg-scrollbar-content__block"></div>
+          <div class="sg-scrollbar-content__block"></div>
+          <div class="sg-scrollbar-content__block"></div>
+          <div class="sg-scrollbar-content__block"></div>
+        </div>
+
+        <!-- Scrollbar component -->
+        <div class="custom-scrollbar is-visible sg-scrollbar-static" id="sg-scrollbar">
+          <button class="custom-scrollbar__btn" id="sg-scroll-up" aria-label="Rolar para cima">
+            <img src="assets/icons/arrow_drop_up.svg" alt="">
+          </button>
+          <div class="custom-scrollbar__track" id="sg-scroll-track">
+            <div class="custom-scrollbar__thumb" id="sg-scroll-thumb">
+              <img src="assets/icons/drag_indicator.svg" alt="" onerror="this.style.display='none'">
+            </div>
+          </div>
+          <button class="custom-scrollbar__btn" id="sg-scroll-down" aria-label="Rolar para baixo">
+            <img src="assets/icons/arrow_drop_down.svg" alt="">
+          </button>
+        </div>
+      </div>
+
+      <!-- Especificações -->
+      <div class="sg-scrollbar-specs">
+        <div class="sg-spec-group">
+          <p class="sg-spec-group__title">Container</p>
+          <div class="sg-spec-row"><span class="sg-spec-row__key">width</span><span class="sg-spec-row__val">51px</span></div>
+          <div class="sg-spec-row"><span class="sg-spec-row__key">border-radius</span><span class="sg-spec-row__val">8px</span></div>
+          <div class="sg-spec-row"><span class="sg-spec-row__key">padding</span><span class="sg-spec-row__val">8px</span></div>
+          <div class="sg-spec-row"><span class="sg-spec-row__key">gap</span><span class="sg-spec-row__val">8px</span></div>
+          <div class="sg-spec-row"><span class="sg-spec-row__key">background</span><span class="sg-spec-row__val">#FFFFFF</span></div>
+          <div class="sg-spec-row"><span class="sg-spec-row__key">position</span><span class="sg-spec-row__val">fixed · right 16px</span></div>
+          <div class="sg-spec-row"><span class="sg-spec-row__key">z-index</span><span class="sg-spec-row__val">200</span></div>
+        </div>
+        <div class="sg-spec-group">
+          <p class="sg-spec-group__title">Botões (▲ ▼)</p>
+          <div class="sg-spec-row"><span class="sg-spec-row__key">width × height</span><span class="sg-spec-row__val">35 × 40px</span></div>
+          <div class="sg-spec-row"><span class="sg-spec-row__key">border-radius</span><span class="sg-spec-row__val">4px</span></div>
+          <div class="sg-spec-row"><span class="sg-spec-row__key">icon opacity</span><span class="sg-spec-row__val">0.45</span></div>
+          <div class="sg-spec-row"><span class="sg-spec-row__key">:active bg</span><span class="sg-spec-row__val">#F5F5F5</span></div>
+          <div class="sg-spec-row"><span class="sg-spec-row__key">:active scale</span><span class="sg-spec-row__val">0.95</span></div>
+        </div>
+        <div class="sg-spec-group">
+          <p class="sg-spec-group__title">Thumb (arraste)</p>
+          <div class="sg-spec-row"><span class="sg-spec-row__key">min-height</span><span class="sg-spec-row__val">56px</span></div>
+          <div class="sg-spec-row"><span class="sg-spec-row__key">border-radius</span><span class="sg-spec-row__val">4px</span></div>
+          <div class="sg-spec-row"><span class="sg-spec-row__key">background</span><span class="sg-spec-row__val">#1A171B</span></div>
+          <div class="sg-spec-row"><span class="sg-spec-row__key">:active bg</span><span class="sg-spec-row__val">#262626</span></div>
+          <div class="sg-spec-row"><span class="sg-spec-row__key">touch-action</span><span class="sg-spec-row__val">none</span></div>
+        </div>
+        <div class="sg-spec-group">
+          <p class="sg-spec-group__title">Comportamento</p>
+          <div class="sg-spec-row"><span class="sg-spec-row__key">aparece quando</span><span class="sg-spec-row__val">content > viewport</span></div>
+          <div class="sg-spec-row"><span class="sg-spec-row__key">classe ativa</span><span class="sg-spec-row__val">.is-visible</span></div>
+          <div class="sg-spec-row"><span class="sg-spec-row__key">fade in/out</span><span class="sg-spec-row__val">opacity 200ms</span></div>
+          <div class="sg-spec-row"><span class="sg-spec-row__key">nativo oculto</span><span class="sg-spec-row__val">scrollbar-width: none</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 </div><!-- /sg-container -->
 </div><!-- /sg-page -->
 
 <script src="js/main.js" defer></script>
+<script>
+  /* ── Scrollbar demo interativa (style-guide only) ─────────── */
+  (function () {
+    var content = document.getElementById('sg-scroll-content');
+    var thumb   = document.getElementById('sg-scroll-thumb');
+    var track   = document.getElementById('sg-scroll-track');
+    var btnUp   = document.getElementById('sg-scroll-up');
+    var btnDown = document.getElementById('sg-scroll-down');
+    if (!content || !thumb || !track) return;
+
+    function updateThumb() {
+      var trackH   = track.clientHeight;
+      var scrollH  = content.scrollHeight;
+      var viewH    = content.clientHeight;
+      var ratio    = viewH / scrollH;
+      var thumbH   = Math.max(56, trackH * ratio);
+      var maxTop   = trackH - thumbH;
+      var scrollPct = content.scrollTop / (scrollH - viewH);
+      thumb.style.height = thumbH + 'px';
+      thumb.style.top    = (scrollPct * maxTop) + 'px';
+    }
+
+    content.addEventListener('scroll', updateThumb);
+    updateThumb();
+
+    btnUp.addEventListener('click', function () {
+      content.scrollBy({ top: -80, behavior: 'smooth' });
+    });
+    btnDown.addEventListener('click', function () {
+      content.scrollBy({ top: 80, behavior: 'smooth' });
+    });
+
+    /* drag thumb */
+    var dragging = false, startY = 0, startScroll = 0;
+    thumb.addEventListener('pointerdown', function (e) {
+      dragging = true; startY = e.clientY;
+      startScroll = content.scrollTop;
+      thumb.setPointerCapture(e.pointerId);
+    });
+    thumb.addEventListener('pointermove', function (e) {
+      if (!dragging) return;
+      var trackH  = track.clientHeight;
+      var thumbH  = thumb.clientHeight;
+      var maxTop  = trackH - thumbH;
+      var maxScroll = content.scrollHeight - content.clientHeight;
+      var dy = e.clientY - startY;
+      var scrollDelta = (dy / maxTop) * maxScroll;
+      content.scrollTop = Math.min(Math.max(0, startScroll + scrollDelta), maxScroll);
+    });
+    thumb.addEventListener('pointerup', function () { dragging = false; });
+  })();
+</script>
 </body>
 </html>

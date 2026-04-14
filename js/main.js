@@ -96,6 +96,88 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // ── Custom Touch Scrollbar ───────────────────────────────────────
+  const scrollbar = document.getElementById("custom-scrollbar");
+  const scrollThumb = document.getElementById("scroll-thumb");
+  const scrollTrack = document.getElementById("scroll-track");
+  const scrollUpBtn = document.getElementById("scroll-up");
+  const scrollDownBtn = document.getElementById("scroll-down");
+
+  if (scrollbar && scrollThumb && scrollTrack) {
+    const SCROLL_STEP = 240;
+
+    const getScrollMetrics = () => ({
+      scrollTop: window.scrollY,
+      maxScroll: document.documentElement.scrollHeight - window.innerHeight,
+      trackHeight: scrollTrack.clientHeight,
+    });
+
+    const updateScrollbar = () => {
+      const { scrollTop, maxScroll, trackHeight } = getScrollMetrics();
+
+      if (maxScroll <= 0) {
+        scrollbar.classList.remove("is-visible");
+        return;
+      }
+
+      scrollbar.classList.add("is-visible");
+
+      const thumbHeight = Math.max(56, trackHeight * (window.innerHeight / document.documentElement.scrollHeight));
+      const thumbTop = (scrollTop / maxScroll) * (trackHeight - thumbHeight);
+
+      scrollThumb.style.height = thumbHeight + "px";
+      scrollThumb.style.top = thumbTop + "px";
+    };
+
+    window.addEventListener("scroll", updateScrollbar, { passive: true });
+    window.addEventListener("resize", updateScrollbar, { passive: true });
+    updateScrollbar();
+
+    scrollUpBtn?.addEventListener("pointerdown", () => {
+      window.scrollBy({ top: -SCROLL_STEP, behavior: "smooth" });
+    });
+
+    scrollDownBtn?.addEventListener("pointerdown", () => {
+      window.scrollBy({ top: SCROLL_STEP, behavior: "smooth" });
+    });
+
+    // ── Thumb drag ────────────────────────────────────────────────
+    let isDragging = false;
+    let dragStartY = 0;
+    let dragStartScroll = 0;
+
+    scrollThumb.addEventListener("pointerdown", (e) => {
+      isDragging = true;
+      dragStartY = e.clientY;
+      dragStartScroll = window.scrollY;
+      scrollThumb.setPointerCapture(e.pointerId);
+      e.preventDefault();
+    });
+
+    scrollThumb.addEventListener("pointermove", (e) => {
+      if (!isDragging) return;
+      const { maxScroll, trackHeight } = getScrollMetrics();
+      const thumbHeight = scrollThumb.clientHeight;
+      const deltaY = e.clientY - dragStartY;
+      const scrollDelta = (deltaY / (trackHeight - thumbHeight)) * maxScroll;
+      window.scrollTo({ top: dragStartScroll + scrollDelta });
+    });
+
+    scrollThumb.addEventListener("pointerup", () => { isDragging = false; });
+    scrollThumb.addEventListener("pointercancel", () => { isDragging = false; });
+
+    // ── Track click — jump to position ───────────────────────────
+    scrollTrack.addEventListener("pointerdown", (e) => {
+      if (e.target === scrollThumb || scrollThumb.contains(e.target)) return;
+      const trackRect = scrollTrack.getBoundingClientRect();
+      const clickY = e.clientY - trackRect.top;
+      const { maxScroll, trackHeight } = getScrollMetrics();
+      const thumbHeight = scrollThumb.clientHeight;
+      const targetScroll = ((clickY - thumbHeight / 2) / (trackHeight - thumbHeight)) * maxScroll;
+      window.scrollTo({ top: targetScroll, behavior: "smooth" });
+    });
+  }
+
   // ── Hero modes (slider | static) ─────────────────────────────────
   document.querySelectorAll(".hero[data-hero-mode]").forEach((hero) => {
     const mode = hero.dataset.heroMode;
