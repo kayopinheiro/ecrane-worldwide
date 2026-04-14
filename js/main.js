@@ -40,6 +40,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   restartInactivityTimer();
 
+  // ── Accordion (FAQ) ──────────────────────────────────────────────
+  document.querySelectorAll(".accordion__trigger").forEach((trigger) => {
+    trigger.addEventListener("pointerdown", () => {
+      const accordion = trigger.closest(".accordion");
+      const isOpen = accordion.classList.toggle("is-open");
+      trigger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+  });
+
   // ── Language picker ──────────────────────────────────────────────
   const langTrigger = document.getElementById("language-trigger");
   const langMenu = document.getElementById("language-menu");
@@ -86,4 +95,48 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
+  // ── Hero modes (slider | static) ─────────────────────────────────
+  document.querySelectorAll(".hero[data-hero-mode]").forEach((hero) => {
+    const mode = hero.dataset.heroMode;
+    const slides = Array.from(hero.querySelectorAll(".hero__slide"));
+    const indicatorsRoot = hero.querySelector(".hero__indicators");
+    const interval = Number(hero.dataset.heroInterval) || 5000;
+
+    if (slides.length === 0) {
+      return;
+    }
+
+    let current = 0;
+
+    const indicators = indicatorsRoot
+      ? slides.map((_, index) => {
+          const dot = document.createElement("span");
+          dot.className = "hero__indicator";
+          dot.dataset.index = String(index);
+          indicatorsRoot.appendChild(dot);
+          return dot;
+        })
+      : [];
+
+    const setActiveSlide = (index) => {
+      slides.forEach((slide, slideIndex) => {
+        slide.classList.toggle("is-active", slideIndex === index);
+      });
+      indicators.forEach((dot, dotIndex) => {
+        dot.classList.toggle("is-active", dotIndex === index);
+      });
+    };
+
+    setActiveSlide(0);
+
+    if (mode !== "slider" || slides.length === 1) {
+      return;
+    }
+
+    window.setInterval(() => {
+      current = (current + 1) % slides.length;
+      setActiveSlide(current);
+    }, interval);
+  });
 });

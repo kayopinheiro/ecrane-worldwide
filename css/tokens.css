@@ -80,6 +80,11 @@
   --safe-area:      80px;
   --container:      960px;
 
+  /* Grid */
+  --grid-cols:     12;
+  --grid-col-width: 80px;
+  --grid-gutter:   24px;
+
   /* ── Sombras ────────────────────────────────────────────── */
   --shadow-card:    0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
   --shadow-welcome: 0 8px 40px rgba(0,0,0,0.18);
@@ -133,4 +138,22 @@ html, body {
 @keyframes pageEnter {
   from { opacity: 0; }
   to   { opacity: 1; }
+}
+
+/* Grid */
+.container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--grid-gutter);
+}
+
+.container-grid {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--grid-gutter);
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
 }

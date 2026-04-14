@@ -1,0 +1,198 @@
+/* ============================================================
+   topbar.css — E-CRANE Totem · Componente compartilhado
+   Importar em todas as páginas que exibem a navbar.
+   ============================================================ */
+
+/* Container interno — grid de 3 colunas */
+.topbar__container {
+  min-height: 64px;
+  background: var(--color-surface);
+  border: 1px solid rgba(152, 156, 159, 0.2);
+  border-top: 0;
+  border-radius: 0 0 8px 8px;
+  padding: 8px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+/* ── Seletor de idioma ─────────────────────────────────────── */
+.lang-picker {
+  justify-self: start;
+  position: relative;
+}
+
+.lang {
+  border: 1px solid rgba(152, 156, 159, 0.2);
+  border-radius: 4px;
+  background: var(--neutral-100);
+  padding: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: #212121;
+  font: 500 16px/1.5 var(--font-family);
+  white-space: nowrap;
+  transition: background 150ms, transform 150ms;
+}
+
+.lang:active {
+  transform: scale(0.97);
+  background: var(--neutral-200);
+}
+
+.lang__flag {
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+}
+
+.lang__chevron {
+  width: 16px;
+  height: 16px;
+  transition: transform 200ms;
+}
+
+.lang[aria-expanded="true"] .lang__chevron {
+  transform: rotate(180deg);
+}
+
+/* Dropdown */
+.lang-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  min-width: 160px;
+  background: var(--color-surface);
+  border: 1px solid rgba(152, 156, 159, 0.25);
+  border-radius: 8px;
+  padding: 4px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06);
+  z-index: 100;
+}
+
+.lang-menu.is-open {
+  display: block;
+}
+
+.lang-menu__item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 6px;
+  font: 500 15px/1 var(--font-family);
+  color: #212121;
+  background: transparent;
+  border: none;
+  cursor: none;
+  text-align: left;
+  transition: background 120ms;
+}
+
+.lang-menu__item:active {
+  background: var(--neutral-100);
+  transform: scale(0.98);
+}
+
+.lang-menu__item.is-selected {
+  background: var(--neutral-100);
+}
+
+.lang-menu__item img {
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+/* ── Logo central ──────────────────────────────────────────── */
+.topbar__logo {
+  width: 156px;
+  height: 33px;
+  justify-self: center;
+}
+
+/* ── Direita: relógio + botão home ─────────────────────────── */
+.topbar__right {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  width: 198px;
+  justify-content: flex-end;
+}
+
+.clock {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #000;
+  font: 500 16px/1.5 var(--font-family);
+}
+
+.clock__icon {
+  width: 24px;
+  height: 24px;
+}
+
+.home-btn {
+  width: 64px;
+  height: 64px;
+  border: 1.5px solid rgba(152, 156, 159, 0.2);
+  border-radius: 4px;
+  background: #1a171b;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transition: transform 150ms ease, opacity 150ms ease;
+}
+
+.home-btn:active {
+  transform: scale(0.97);
+  opacity: 0.95;
+}
+
+.home-btn img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
+
+/* ── Topbar dentro do hero (home / inicio.html) ───────────── */
+.hero > .topbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  padding: 0 40px;
+}
+
+.hero > .topbar .topbar__container {
+  border-top: 1px solid rgba(152, 156, 159, 0.2);
+}
+
+/* ── Responsivo ────────────────────────────────────────────── */
+@media (max-width: 1280px) {
+  .topbar__right {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 900px) {
+  .topbar__container {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    justify-items: center;
+  }
+
+  .lang,
+  .topbar__right {
+    justify-self: center;
+  }
+}

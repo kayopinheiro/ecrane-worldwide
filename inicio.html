@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Início — E-CRANE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/topbar.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body class="home-page">
+
+  <main class="home">
+    <section class="hero" data-hero-mode="slider" data-hero-interval="5000">
+      <div class="hero__slides">
+        <div class="hero__slide is-active" style="background-image:url('assets/images/102.jpg');"></div>
+        <div class="hero__slide" style="background-image:url('assets/images/103.jpg');"></div>
+        <div class="hero__slide" style="background-image:url('assets/images/104.jpg');"></div>
+      </div>
+      <div class="hero__overlay"></div>
+
+      <header class="topbar" role="banner">
+        <div class="topbar__container">
+          <div class="lang-picker">
+            <button class="lang touchable" id="language-trigger" type="button" aria-label="Selecionar idioma" aria-haspopup="listbox" aria-expanded="false">
+              <img src="assets/icons/Brazil Icon.svg" alt="Bandeira do Brasil" class="lang__flag">
+              <span class="lang__label" data-lang-label>Portugues</span>
+              <img src="assets/icons/keyboard_arrow_down.svg" alt="" aria-hidden="true" class="lang__chevron">
+            </button>
+
+            <div class="lang-menu" id="language-menu" role="listbox" aria-label="Idiomas disponíveis">
+              <button class="lang-menu__item touchable is-selected" type="button" role="option" aria-selected="true" data-lang="pt-BR" data-lang-label="Portugues" data-lang-flag="assets/icons/Brazil Icon.svg" data-lang-flag-alt="Bandeira do Brasil">
+                <img src="assets/icons/Brazil Icon.svg" alt="" aria-hidden="true">
+                <span>Portugues</span>
+              </button>
+              <button class="lang-menu__item touchable" type="button" role="option" aria-selected="false" data-lang="en-US" data-lang-label="English" data-lang-flag="assets/icons/Estados Unidos.svg" data-lang-flag-alt="Bandeira dos Estados Unidos">
+                <img src="assets/icons/Estados Unidos.svg" alt="" aria-hidden="true">
+                <span>English</span>
+              </button>
+            </div>
+          </div>
+
+          <img src="assets/logos/logo-ecrane-black.svg" alt="E-CRANE" class="topbar__logo">
+
+          <div class="topbar__right">
+            <div class="clock" aria-label="Horário atual">
+              <img src="assets/icons/schedule.svg" alt="" aria-hidden="true" class="clock__icon">
+              <span id="totem-time">10:32</span>
+            </div>
+            <button class="home-btn touchable" type="button" aria-label="Início">
+              <img src="assets/icons/home.svg" alt="" aria-hidden="true">
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <div class="hero__content">
+        <div class="hero__text">
+          <p class="hero__label">Bem-vindo</p>
+          <h2 class="hero__title">Seu parceiro em desempenho</h2>
+          <p class="hero__subtitle">Soluções turnkey para granéis sólidos, reciclagem de metais e dragagem.</p>
+        </div>
+      </div>
+      <div class="hero__indicators"></div>
+    </section>
+
+    <nav class="bento-grid" aria-label="Seções">
+      <a href="institucional.html" class="card touchable">
+        <div class="card__top">
+          <div class="card__icon">
+            <img src="assets/icons/corporate_fare.svg" alt="" aria-hidden="true">
+          </div>
+          <img src="assets/icons/north_east.svg" alt="" aria-hidden="true" class="card__arrow">
+        </div>
+        <div class="card__text">
+          <span class="card__label">Institucional e Cultura</span>
+          <span class="card__detail">Conheça nossa história, valores e a família por trás da E-Crane.</span>
+        </div>
+      </a>
+
+      <a href="diferenciais.html" class="card touchable">
+        <div class="card__top">
+          <div class="card__icon">
+            <img src="assets/icons/precision_manufacturing.svg" alt="" aria-hidden="true">
+          </div>
+          <img src="assets/icons/north_east.svg" alt="" aria-hidden="true" class="card__arrow">
+        </div>
+        <div class="card__text">
+          <span class="card__label">Diferenciais e Tecnologia</span>
+          <span class="card__detail">O conceito de equilíbrio que revolucionou a movimentação de materiais.</span>
+        </div>
+      </a>
+
+      <a href="portfolio.html" class="card touchable">
+        <div class="card__top">
+          <div class="card__icon">
+            <img src="assets/icons/two_pager_store.svg" alt="" aria-hidden="true">
+          </div>
+          <img src="assets/icons/north_east.svg" alt="" aria-hidden="true" class="card__arrow">
+        </div>
+        <div class="card__text">
+          <span class="card__label">Portfólio de Produtos</span>
+          <span class="card__detail">Sete séries de equipamentos, bases e implementos customizados.</span>
+        </div>
+      </a>
+
+      <a href="setores.html" class="card touchable">
+        <div class="card__top">
+          <div class="card__icon">
+            <img src="assets/icons/globe_location_pin.svg" alt="" aria-hidden="true">
+          </div>
+          <img src="assets/icons/north_east.svg" alt="" aria-hidden="true" class="card__arrow">
+        </div>
+        <div class="card__text">
+          <span class="card__label">Setores de Atuação</span>
+          <span class="card__detail">Reciclagem, dragagem, granéis sólidos e logística portuária.</span>
+        </div>
+      </a>
+
+      <a href="suporte.html" class="card touchable">
+        <div class="card__top">
+          <div class="card__icon">
+            <img src="assets/icons/support_agent.svg" alt="" aria-hidden="true">
+          </div>
+          <img src="assets/icons/north_east.svg" alt="" aria-hidden="true" class="card__arrow">
+        </div>
+        <div class="card__text">
+          <span class="card__label">Suporte e Contato</span>
+          <span class="card__detail">Rede global de suporte, FAQ e contatos diretos.</span>
+        </div>
+      </a>
+    </nav>
+  </main>
+
+  <footer class="page-footer">
+    <div class="page-footer__inner">
+      <span class="page-footer__copy">© 2026 E-CRANE - Todos os direitos reservados</span>
+      <span class="page-footer__credit">Site desenvolvido por <strong>Mukutu</strong></span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

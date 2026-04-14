@@ -1,0 +1,98 @@
+/* ============================================================
+   accordion.css — E-CRANE Totem · Componente compartilhado
+   Importar em todas as páginas que exibem o FAQ accordion.
+   ============================================================ */
+
+.accordion {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+/* ── Trigger (cabeçalho clicável) ──────────────────────────── */
+.accordion__trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  gap: 16px;
+  font-family: var(--font-family);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 140%;
+  color: var(--color-text-primary);
+  background: transparent;
+  border: none;
+  cursor: none;
+  min-height: 72px;
+  user-select: none;
+  text-align: left;
+  transition: background 150ms ease;
+}
+
+.accordion__trigger:active {
+  background: var(--neutral-100);
+}
+
+.accordion__question {
+  flex: 1;
+}
+
+/* ── Ícone ──────────────────────────────────────────────────── */
+.accordion__icon {
+  width: 24px;
+  height: 24px;
+  background: var(--neutral-900);
+  border-radius: 6px;
+  padding: 4px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 200ms ease;
+}
+
+.accordion__icon img {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) invert(1);
+  display: block;
+}
+
+.accordion.is-open .accordion__icon {
+  transform: rotate(180deg);
+}
+
+/* ── Corpo animado ──────────────────────────────────────────── */
+/* grid-template-rows anima o colapso; opacity anima o fade */
+.accordion__body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 200ms ease;
+}
+
+.accordion.is-open .accordion__body {
+  grid-template-rows: 1fr;
+}
+
+.accordion__content {
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.accordion.is-open .accordion__content {
+  opacity: 1;
+}
+
+.accordion__content-inner {
+  padding: 20px 24px 24px;
+  border-top: 1px solid var(--color-border);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--neutral-600);
+  line-height: 160%;
+}

@@ -64,6 +64,25 @@
   border-bottom: 1px solid var(--color-border);
 }
 
+.sg-section__desc {
+  font-size: var(--text-body-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-4);
+}
+
+/* Grid preview */
+.sg-grid-preview {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+  height: 180px;
+}
+
+.sg-grid-col {
+  background: var(--neutral-200);
+  border-radius: var(--radius-sm);
+}
+
 /* ── Swatches de cor ───────────────────────────────────────── */
 .sg-swatches {
   display: grid;
@@ -288,10 +307,10 @@
 .card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-6);
+  border-radius: var(--space-2);
+  padding: var(--space-8);
   min-height: 160px;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 6px 14px rgba(0, 0, 0, 0.03);
   position: relative;
   cursor: none;
   transition: transform 150ms ease, box-shadow 150ms ease;
@@ -317,29 +336,44 @@
 .card:active::after { opacity: 1; }
 
 .card__icon {
-  width: 24px;
-  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: var(--space-3);
+  border-radius: var(--space-1);
+  background: var(--neutral-100);
   color: var(--color-text-primary);
   margin-bottom: var(--space-4);
 }
 
 .card__icon svg {
-  width: 100%;
-  height: 100%;
+  width: 24px;
+  height: 24px;
+}
+
+.card__icon img {
+  width: 24px;
+  height: 24px;
+  display: block;
 }
 
 .card__arrow {
   position: absolute;
-  top: var(--space-5);
-  right: var(--space-5);
-  width: 20px;
-  height: 20px;
-  color: var(--color-text-muted);
+  top: var(--space-8);
+  right: var(--space-8);
+  width: 30px;
+  height: 30px;
+  color: #1C1B1F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card__arrow svg {
-  width: 100%;
-  height: 100%;
+  width: 24px;
+  height: 24px;
 }
 
 .card__title {
@@ -347,11 +381,12 @@
   font-weight: 500;
   color: var(--color-text-primary);
   margin-bottom: var(--space-2);
+  margin-top: var(--space-2);
   line-height: 140%;
 }
 
 .card__description {
-  font-size: var(--text-body-sm);
+  font-size: var(--text-body-md);
   font-weight: 400;
   color: var(--color-text-secondary);
   line-height: 150%;
@@ -471,23 +506,37 @@
 /* ── Hero com Imagem ───────────────────────────────────────── */
 .hero {
   width: 100%;
-  height: 280px;
+  height: 26.5625rem;
   position: relative;
   overflow: hidden;
-  border-radius: var(--radius-lg);
+  border-radius: 0 0 0.5rem 0.5rem;
+ }
 }
 
-.hero__image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+.hero__slides {
+  position: absolute;
+  inset: 0;
+}
+
+.hero__slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.hero__slide.is-active {
+  opacity: 1;
 }
 
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background: var(--color-overlay);
+  background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 100%);
+  z-index: 1;
 }
 
 .hero__content {
@@ -496,7 +545,43 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: var(--space-8);
+  align-items: flex-start;
+  padding: var(--space-8) var(--space-10);
+  z-index: 2;
+}
+
+.hero__content > div {
+  width: 50%;
+  max-width: 50%;
+}
+
+.hero__indicators {
+  position: absolute;
+  right: var(--space-8);
+  bottom: var(--space-6);
+  left: auto;
+  transform: none;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(2px);
+}
+
+.hero__indicator {
+  width: 8px;
+  height: 8px;
+  border: 0;
+  padding: 0;
+  border-radius: 999px;
+  background: rgba(28, 27, 31, 0.35);
+}
+
+.hero__indicator.is-active {
+  background: rgba(28, 27, 31, 0.9);
 }
 
 .hero__label {
@@ -507,11 +592,13 @@
 }
 
 .hero__title {
-  font-size: var(--text-heading-lg);
+  font-size: 2.75rem; /* ~44px, maior conforme Figma */
   font-weight: 700;
   color: #FFFFFF;
   letter-spacing: -0.02em;
-  line-height: 120%;
+  line-height: 110%;
+  max-width: 600px;
+  text-align: left;
 }
 
 .hero__subtitle {
@@ -536,62 +623,7 @@
 .breadcrumb__sep  { width: 14px; height: 14px; color: var(--color-text-muted); }
 .breadcrumb__current { color: var(--color-text-primary); font-weight: 500; }
 
-/* ── Accordion ─────────────────────────────────────────────── */
-.accordion {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  margin-bottom: var(--space-2);
-}
-
-.accordion__trigger {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--space-6);
-  font-size: var(--text-title-md);
-  font-weight: 500;
-  color: var(--color-text-primary);
-  cursor: none;
-  min-height: 72px;
-  user-select: none;
-  transition: background 150ms ease;
-  gap: var(--space-4);
-}
-
-.accordion__trigger:active { background: var(--neutral-100); }
-
-.accordion__question { flex: 1; line-height: 140%; }
-
-.accordion__icon {
-  width: 32px;
-  height: 32px;
-  background: var(--neutral-900);
-  border-radius: var(--radius-sm);
-  padding: 4px;
-  color: #FFFFFF;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.accordion__icon svg {
-  width: 22px;
-  height: 22px;
-  fill: #FFFFFF;
-}
-
-.accordion__content {
-  padding: 0 var(--space-6) var(--space-6);
-  font-size: var(--text-body-md);
-  font-weight: 400;
-  color: var(--neutral-600);
-  line-height: 160%;
-  border-top: 1px solid var(--color-border);
-  padding-top: var(--space-5);
-}
+/* Accordion — estilos agora em css/accordion.css */
 
 /* ── Footer ────────────────────────────────────────────────── */
 .footer {

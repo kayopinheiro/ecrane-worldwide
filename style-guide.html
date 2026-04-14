@@ -6,6 +6,8 @@
   <title>Style Guide — E-CRANE Totem</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/topbar.css">
+  <link rel="stylesheet" href="css/accordion.css">
   <link rel="stylesheet" href="css/style-guide.css">
   <style>
     /* Overrides específicos do style guide — não usar em páginas reais */
@@ -309,10 +311,35 @@
   </div>
 
   <!-- ══════════════════════════════════════════════════════
-       4. BOTÕES
+       4. GRADE (12 COLUNAS)
   ═══════════════════════════════════════════════════════════ -->
   <div class="sg-section">
     <p class="sg-section__label">04</p>
+    <h2 class="sg-section__title">Grade — 12 Colunas</h2>
+
+    <p class="sg-section__desc">max-width: 1440px · gap: 24px · 12 colunas</p>
+
+    <div class="sg-grid-preview" aria-hidden="true">
+      <div class="sg-grid-col"></div>
+      <div class="sg-grid-col"></div>
+      <div class="sg-grid-col"></div>
+      <div class="sg-grid-col"></div>
+      <div class="sg-grid-col"></div>
+      <div class="sg-grid-col"></div>
+      <div class="sg-grid-col"></div>
+      <div class="sg-grid-col"></div>
+      <div class="sg-grid-col"></div>
+      <div class="sg-grid-col"></div>
+      <div class="sg-grid-col"></div>
+      <div class="sg-grid-col"></div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       5. BOTÕES
+  ═══════════════════════════════════════════════════════════ -->
+  <div class="sg-section">
+    <p class="sg-section__label">05</p>
     <h2 class="sg-section__title">Botões</h2>
 
     <div class="sg-btn-row" style="margin-bottom:24px;">
@@ -356,7 +383,7 @@
           <svg viewBox="0 0 24 24" fill="none"><mask id="ma1" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"><rect width="24" height="24" fill="#D9D9D9"/></mask><g mask="url(#ma1)"><path d="M5.55375 19.5L4.5 18.4462L15.9462 7H9V5.5H18.5V15H17V8.05375L5.55375 19.5Z" fill="currentColor"/></g></svg>
         </span>
         <div class="card__icon">
-          <svg viewBox="0 0 24 24" fill="none"><mask id="mi1" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"><rect width="24" height="24" fill="#D9D9D9"/></mask><g mask="url(#mi1)"><path d="M2.36572 20.5771V3.07715H11.8655V7.07715H21.6347V20.5771H2.36572ZM3.86547 19.0771H10.3657V16.5771H3.86547V19.0771ZM3.86547 15.0771H10.3657V12.5771H3.86547V15.0771ZM3.86547 11.0771H10.3657V8.57715H3.86547V11.0771ZM3.86547 7.07715H10.3657V4.57715H3.86547V7.07715ZM11.8655 19.0771H20.135V8.57715H11.8655V19.0771ZM14.058 12.5771V11.0771H17.7502V12.5771H14.058ZM14.058 16.5771V15.0771H17.7502V16.5771H14.058Z" fill="currentColor"/></g></svg>
+          <img src="assets/icons/corporate_fare.svg" alt="" aria-hidden="true">
         </div>
         <p class="card__title">Institucional e Cultura</p>
         <p class="card__description">Conheça nossa história, valores e a família por trás da E-Crane.</p>
@@ -367,7 +394,7 @@
           <svg viewBox="0 0 24 24" fill="none"><mask id="ma2" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"><rect width="24" height="24" fill="#D9D9D9"/></mask><g mask="url(#ma2)"><path d="M5.55375 19.5L4.5 18.4462L15.9462 7H9V5.5H18.5V15H17V8.05375L5.55375 19.5Z" fill="currentColor"/></g></svg>
         </span>
         <div class="card__icon">
-          <svg viewBox="0 0 24 24" fill="none"><mask id="mi2" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"><rect width="24" height="24" fill="#D9D9D9"/></mask><g mask="url(#mi2)"><path d="M4.36914 20.2306V17.9229H7.43064L4.86139 9.51512C4.41789 9.28446 4.05831 8.94987 3.78264 8.51137C3.50697 8.07287 3.36914 7.58829 3.36914 7.05762C3.36914 6.29479 3.63681 5.64571 4.17214 5.11037C4.70731 4.57521 5.35631 4.30762 6.11914 4.30762C6.74997 4.30762 7.30189 4.49512 7.77489 4.87012C8.24789 5.24512 8.57164 5.72429 8.74614 6.30762H12.1769V5.05762C12.1769 4.84479 12.2486 4.66654 12.3921 4.52287C12.5358 4.37937 12.7141 4.30762 12.9269 4.30762C13.0576 4.30762 13.1793 4.34096 13.2921 4.40762C13.405 4.47429 13.4921 4.56787 13.5536 4.68837V4.82287L15.3114 3.18462C15.4551 3.04096 15.6214 2.95154 15.8104 2.91637C15.9996 2.88104 16.1845 2.91021 16.3651 3.00387L20.2076 4.78462C20.3691 4.86529 20.4841 4.98221 20.5526 5.13537C20.6213 5.28871 20.6204 5.44096 20.5499 5.59212C20.4691 5.75379 20.3521 5.85737 20.1989 5.90287C20.0457 5.94837 19.8935 5.93587 19.7421 5.86537L16.0461 4.15762L13.6769 6.35762V7.75762L16.0461 9.90762L19.7421 8.19987C19.8935 8.12937 20.0483 8.11946 20.2066 8.17012C20.365 8.22079 20.4794 8.32171 20.5499 8.47287C20.6306 8.63437 20.6341 8.78921 20.5604 8.93737C20.4867 9.08537 20.3691 9.19979 20.2076 9.28062L16.3651 11.0921C16.1845 11.1858 15.9996 11.2134 15.8104 11.1749C15.6214 11.1364 15.4551 11.0485 15.3114 10.9114L13.5536 9.29212V9.42687C13.4921 9.52687 13.405 9.61529 13.2921 9.69212C13.1793 9.76912 13.0576 9.80762 12.9269 9.80762C12.7141 9.80762 12.5358 9.73579 12.3921 9.59212C12.2486 9.44862 12.1769 9.27046 12.1769 9.05762V7.80762H8.74614C8.69614 7.98579 8.62756 8.15887 8.54039 8.32687C8.45306 8.49471 8.34981 8.64854 8.23064 8.78837L13.1536 17.9229H16.8691V20.2306H4.36914Z" fill="currentColor"/></g></svg>
+          <img src="assets/icons/memory.svg" alt="" aria-hidden="true">
         </div>
         <p class="card__title">Diferenciais e Tecnologia</p>
         <p class="card__description">O conceito de equilíbrio que revolucionou a movimentação de materiais.</p>
@@ -378,7 +405,7 @@
           <svg viewBox="0 0 24 24" fill="none"><mask id="ma3" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"><rect width="24" height="24" fill="#D9D9D9"/></mask><g mask="url(#ma3)"><path d="M5.55375 19.5L4.5 18.4462L15.9462 7H9V5.5H18.5V15H17V8.05375L5.55375 19.5Z" fill="currentColor"/></g></svg>
         </span>
         <div class="card__icon">
-          <svg viewBox="0 0 24 24" fill="none"><mask id="mi3" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"><rect width="24" height="24" fill="#D9D9D9"/></mask><g mask="url(#mi3)"><path d="M4.30775 19.5C3.80258 19.5 3.375 19.325 3.025 18.975C2.675 18.625 2.5 18.1974 2.5 17.6923V6.30775C2.5 5.80258 2.675 5.375 3.025 5.025C3.375 4.675 3.80258 4.5 4.30775 4.5H19.6923C20.1974 4.5 20.625 4.675 20.975 5.025C21.325 5.375 21.5 5.80258 21.5 6.30775V11.0578H20V6.30775C20 6.23075 19.9679 6.16025 19.9038 6.09625C19.8398 6.03208 19.7693 6 19.6923 6H12.75V11.0578H11.25V6H4.30775C4.23075 6 4.16025 6.03208 4.09625 6.09625C4.03208 6.16025 4 6.23075 4 6.30775V17.6923C4 17.7692 4.03208 17.8398 4.09625 17.9038C4.16025 17.9679 4.23075 18 4.30775 18H11.25V19.5H4.30775ZM15.25 21.5C14.9038 21.5 14.609 21.3782 14.3655 21.1345C14.1218 20.891 14 20.5962 14 20.25V17.5H15.5V20H20V17.5H21.5V20.25C21.5 20.5962 21.3782 20.891 21.1345 21.1345C20.891 21.3782 20.5962 21.5 20.25 21.5H15.25Z" fill="currentColor"/></g></svg>
+          <img src="assets/icons/two_pager_store.svg" alt="" aria-hidden="true">
         </div>
         <p class="card__title">Portfólio de Produtos</p>
         <p class="card__description">Sete séries de equipamentos, bases e implementos customizados.</p>
@@ -392,7 +419,7 @@
           <svg viewBox="0 0 24 24" fill="none"><mask id="ma4" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"><rect width="24" height="24" fill="#D9D9D9"/></mask><g mask="url(#ma4)"><path d="M5.55375 19.5L4.5 18.4462L15.9462 7H9V5.5H18.5V15H17V8.05375L5.55375 19.5Z" fill="currentColor"/></g></svg>
         </span>
         <div class="card__icon">
-          <svg viewBox="0 0 24 24" fill="none"><mask id="mi4" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"><rect width="24" height="24" fill="#D9D9D9"/></mask><g mask="url(#mi4)"><path d="M4.053 21.947C3.51767 21.4118 3.25 20.7628 3.25 20C3.25 19.2372 3.51767 18.5882 4.053 18.053C4.58817 17.5177 5.23717 17.25 6 17.25C6.21417 17.25 6.42442 17.2766 6.63075 17.3298C6.83725 17.3831 7.03217 17.4546 7.2155 17.5443L9.198 15.077C8.78267 14.6243 8.49617 14.1179 8.3385 13.5577C8.18083 12.9974 8.14875 12.4339 8.24225 11.8673L5.3615 10.9135C5.11017 11.3173 4.77908 11.641 4.36825 11.8845C3.95742 12.1282 3.50133 12.25 3 12.25C2.23717 12.25 1.58817 11.9823 1.053 11.447C0.517667 10.9118 0.25 10.2628 0.25 9.5C0.25 8.73717 0.517667 8.08817 1.053 7.553C1.58817 7.01767 2.23717 6.75 3 6.75C3.76283 6.75 4.41183 7.01767 4.947 7.553C5.48233 8.08817 5.75 8.73717 5.75 9.5C5.75 9.559 5.74842 9.60833 5.74525 9.648C5.74192 9.68783 5.74025 9.72758 5.74025 9.76725L8.6115 10.7655C8.88717 10.2552 9.26575 9.81733 9.74725 9.452C10.2286 9.08667 10.7808 8.85208 11.4038 8.74825V5.67875C10.7603 5.52758 10.2404 5.20225 9.84425 4.70275C9.44808 4.20342 9.25 3.63583 9.25 3C9.25 2.23717 9.51767 1.58817 10.053 1.053C10.5882 0.517667 11.2372 0.25 12 0.25C12.7628 0.25 13.4118 0.517667 13.947 1.053C14.4823 1.58817 14.75 2.23717 14.75 3C14.75 3.63583 14.5493 4.20342 14.148 4.70275C13.7468 5.20225 13.2296 5.52758 12.5963 5.67875V8.74825C13.2193 8.85208 13.7698 9.08667 14.248 9.452C14.7262 9.81733 15.1063 10.2552 15.3885 10.7655L18.2598 9.76725C18.2533 9.72108 18.25 9.67975 18.25 9.64325V9.5C18.25 8.73717 18.5177 8.08817 19.053 7.553C19.5882 7.01767 20.2372 6.75 21 6.75C21.7628 6.75 22.4118 7.01767 22.947 7.553C23.4823 8.08817 23.75 8.73717 23.75 9.5C23.75 10.2628 23.4823 10.9118 22.947 11.447C22.4118 11.9823 21.7628 12.25 21 12.25C20.4987 12.25 20.04 12.1282 19.624 11.8845C19.208 11.641 18.8795 11.3173 18.6385 10.9135L15.7578 11.8673C15.8513 12.4339 15.8192 12.9948 15.6615 13.55C15.5038 14.1052 15.2173 14.6109 14.802 15.0673L16.7845 17.5193C16.9678 17.4359 17.1628 17.3703 17.3693 17.3223C17.5756 17.2741 17.7858 17.25 18 17.25C18.7628 17.25 19.4118 17.5177 19.947 18.053C20.4823 18.5882 20.75 19.2372 20.75 20C20.75 20.7628 20.4823 21.4118 19.947 21.947C19.4118 22.4823 18.7628 22.75 18 22.75C17.2372 22.75 16.5882 22.4823 16.053 21.947C15.5177 21.4118 15.25 20.7628 15.25 20C15.25 19.6858 15.301 19.3827 15.403 19.0905C15.5048 18.7982 15.6571 18.5302 15.8598 18.2865L13.877 15.8C13.309 16.1385 12.6823 16.3078 11.997 16.3078C11.3118 16.3078 10.6821 16.1385 10.1077 15.8L8.14025 18.2865C8.33642 18.5302 8.48708 18.7982 8.59225 19.0905C8.69742 19.3827 8.75 19.6858 8.75 20C8.75 20.7628 8.48233 21.4118 7.947 21.947C7.41183 22.4823 6.76283 22.75 6 22.75C5.23717 22.75 4.58817 22.4823 4.053 21.947Z" fill="currentColor"/></g></svg>
+          <img src="assets/icons/precision_manufacturing.svg" alt="" aria-hidden="true">
         </div>
         <p class="card__title">Setores de Atuação</p>
         <p class="card__description">Reciclagem, dragagem, granéis sólidos e logística portuária.</p>
@@ -403,7 +430,7 @@
           <svg viewBox="0 0 24 24" fill="none"><mask id="ma5" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"><rect width="24" height="24" fill="#D9D9D9"/></mask><g mask="url(#ma5)"><path d="M5.55375 19.5L4.5 18.4462L15.9462 7H9V5.5H18.5V15H17V8.05375L5.55375 19.5Z" fill="currentColor"/></g></svg>
         </span>
         <div class="card__icon">
-          <svg viewBox="0 0 24 24" fill="none"><mask id="mi5" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"><rect width="24" height="24" fill="#D9D9D9"/></mask><g mask="url(#mi5)"><path d="M11.3848 20.5V19H18.6923C18.7756 19 18.8477 18.9743 18.9088 18.923C18.9696 18.8718 19 18.8046 19 18.7212V11.727C19 9.81533 18.316 8.206 16.948 6.899C15.5802 5.592 13.9308 4.9385 12 4.9385C10.0692 4.9385 8.41983 5.592 7.052 6.899C5.684 8.206 5 9.81533 5 11.727V17.6152H4.25C3.7705 17.6152 3.359 17.4483 3.0155 17.1145C2.67183 16.7805 2.5 16.3737 2.5 15.8942V13.952C2.5 13.6277 2.59233 13.3305 2.777 13.0605C2.96167 12.7907 3.20267 12.5738 3.5 12.4098L3.54625 11.1328C3.62825 10.0443 3.91092 9.03592 4.39425 8.10775C4.87758 7.17958 5.49742 6.37158 6.25375 5.68375C7.01025 4.99592 7.88333 4.46 8.873 4.076C9.86283 3.692 10.9052 3.5 12 3.5C13.0948 3.5 14.1346 3.692 15.1193 4.076C16.1039 4.46 16.977 4.99333 17.7385 5.676C18.5 6.35867 19.1198 7.16408 19.598 8.09225C20.0762 9.02058 20.3614 10.0289 20.4538 11.1172L20.5 12.3693C20.791 12.5064 21.0304 12.7026 21.2183 12.9578C21.4061 13.2129 21.5 13.4975 21.5 13.8115V16.0442C21.5 16.3582 21.4061 16.6428 21.2183 16.898C21.0304 17.1532 20.791 17.3493 20.5 17.4865V18.7212C20.5 19.2134 20.3234 19.6329 19.9703 19.9797C19.6169 20.3266 19.1909 20.5 18.6923 20.5H11.3848Z" fill="currentColor"/></g></svg>
+          <img src="assets/icons/support_agent.svg" alt="" aria-hidden="true">
         </div>
         <p class="card__title">Suporte e Contato</p>
         <p class="card__description">Rede global de suporte, FAQ e contatos diretos.</p>
@@ -418,48 +445,100 @@
     <p class="sg-section__label">06</p>
     <h2 class="sg-section__title">Navbar</h2>
 
-    <div style="border:1px solid var(--color-border);border-radius:var(--radius-md);overflow:hidden;">
-      <nav class="navbar">
-        <!-- Esquerda: seletor de idioma -->
-        <div class="navbar__left touchable">
-          <span class="navbar__flag">
-            <img src="assets/icons/Brazil Icon.svg" alt="Brasil">
-          </span>
-          <span class="navbar__lang">Português</span>
-          <svg class="navbar__chevron" viewBox="0 0 24 24" fill="none"><mask id="mc1" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"><rect width="24" height="24" fill="#D9D9D9"/></mask><g mask="url(#mc1)"><path d="M12 15.3L6 9.3L7.05 8.25L12 13.2L16.95 8.25L18 9.3L12 15.3Z" fill="currentColor"/></g></svg>
-        </div>
+    <div style="border:1px solid var(--color-border);border-radius:var(--radius-md);overflow:hidden;background:var(--color-bg);">
+      <header class="topbar" style="width:100%;margin:0;">
+        <div class="topbar__container">
+          <div class="lang-picker">
+            <button class="lang touchable" id="sg-language-trigger" type="button" aria-label="Selecionar idioma" aria-haspopup="listbox" aria-expanded="false">
+              <img src="assets/icons/Brazil Icon.svg" alt="Bandeira do Brasil" class="lang__flag">
+              <span class="lang__label" data-lang-label>Portugues</span>
+              <img src="assets/icons/keyboard_arrow_down.svg" alt="" aria-hidden="true" class="lang__chevron">
+            </button>
 
-        <!-- Centro: logo -->
-        <img src="assets/logos/Logo E-Crane.svg" alt="E-CRANE" class="navbar__logo">
+            <div class="lang-menu" id="sg-language-menu" role="listbox" aria-label="Idiomas disponíveis">
+              <button
+                class="lang-menu__item touchable is-selected"
+                type="button"
+                role="option"
+                aria-selected="true"
+                data-lang="pt-BR"
+                data-lang-label="Portugues"
+                data-lang-flag="assets/icons/Brazil Icon.svg"
+                data-lang-flag-alt="Bandeira do Brasil"
+              >
+                <img src="assets/icons/Brazil Icon.svg" alt="" aria-hidden="true">
+                <span>Portugues</span>
+              </button>
 
-        <!-- Direita: relógio + home -->
-        <div class="navbar__right">
-          <span class="navbar__clock" id="sg-clock">
-            <svg viewBox="0 0 24 24" fill="none"><mask id="msc" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"><rect width="24" height="24" fill="#D9D9D9"/></mask><g mask="url(#msc)"><path d="M15.5 14.5L16.55 13.45L12.75 9.65V5H11.25V10.35L15.5 14.5ZM12 21.5C10.6833 21.5 9.44583 21.2506 8.2875 20.7519C7.12917 20.2531 6.12333 19.5744 5.27 18.7156C4.41667 17.8569 3.73808 16.8481 3.23425 15.6894C2.73025 14.5306 2.47825 13.2931 2.47825 11.9769C2.47825 10.6606 2.72758 9.42433 3.22625 8.268C3.72492 7.11133 4.40275 6.10592 5.25975 5.25175C6.11658 4.39742 7.12508 3.72025 8.28525 3.22025C9.44542 2.72025 10.6831 2.47025 12.0081 2.47025C13.3331 2.47025 14.5706 2.72192 15.7206 3.22525C16.8706 3.72875 17.8744 4.40758 18.7319 5.26175C19.5894 6.11608 20.2681 7.12117 20.7681 8.277C21.2681 9.43283 21.5181 10.6742 21.5181 12C21.5181 13.3169 21.2687 14.5556 20.77 15.7163C20.2712 16.8769 19.5919 17.8838 18.7319 18.7369C17.8719 19.5901 16.8656 20.2687 15.7131 20.7725C14.5606 21.2762 13.3194 21.5238 11.9894 21.5H12ZM12 20C14.2333 20 16.125 19.225 17.675 17.675C19.225 16.125 20 14.2333 20 12C20 9.76667 19.225 7.875 17.675 6.325C16.125 4.775 14.2333 4 12 4C9.76667 4 7.875 4.775 6.325 6.325C4.775 7.875 4 9.76667 4 12C4 14.2333 4.775 16.125 6.325 17.675C7.875 19.225 9.76667 20 12 20Z" fill="currentColor"/></g></svg>
-            <span id="sg-time">10:32</span>
-          </span>
-          <button class="navbar__home-btn touchable" aria-label="Início">
-            <svg viewBox="0 0 24 24" fill="none"><mask id="mhb" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"><rect width="24" height="24" fill="#D9D9D9"/></mask><g mask="url(#mhb)"><path d="M6 19.0002H9.34625V13.058H14.6538V19.0002H18V10.0002L12 5.48096L6 10.0002V19.0002ZM4.5 20.5002V9.25021L12 3.60596L19.5 9.25021V20.5002H13.1538V14.558H10.8463V20.5002H4.5Z" fill="#FFFFFF"/></g></svg>
-          </button>
+              <button
+                class="lang-menu__item touchable"
+                type="button"
+                role="option"
+                aria-selected="false"
+                data-lang="en-US"
+                data-lang-label="English"
+                data-lang-flag="assets/icons/Estados Unidos.svg"
+                data-lang-flag-alt="Bandeira dos Estados Unidos"
+              >
+                <img src="assets/icons/Estados Unidos.svg" alt="" aria-hidden="true">
+                <span>English</span>
+              </button>
+            </div>
+          </div>
+
+          <img src="assets/logos/logo-ecrane-black.svg" alt="E-CRANE" class="topbar__logo">
+
+          <div class="topbar__right">
+            <div class="clock" aria-label="Horário atual">
+              <img src="assets/icons/schedule.svg" alt="" aria-hidden="true" class="clock__icon">
+              <span id="sg-time">10:32</span>
+            </div>
+            <button class="home-btn touchable" type="button" aria-label="Início">
+              <img src="assets/icons/home.svg" alt="" aria-hidden="true">
+            </button>
+          </div>
         </div>
-      </nav>
+      </header>
     </div>
   </div>
 
   <!-- ══════════════════════════════════════════════════════
        7. HERO COM IMAGEM
-  ═══════════════════════════════════════════════════════════ -->
+  ════════════════════════════════════════════════════════════ -->
   <div class="sg-section">
     <p class="sg-section__label">07</p>
     <h2 class="sg-section__title">Hero com Imagem</h2>
 
-    <div class="hero">
-      <img src="assets/images/102.jpg" alt="E-CRANE operações portuárias" class="hero__image">
+    <!-- HERO SLIDER (com indicadores) -->
+    <div class="hero" data-hero-mode="slider" data-hero-interval="5000">
+      <div class="hero__slides" aria-hidden="true">
+        <div class="hero__slide is-active" style="background-image:url('assets/images/102.jpg');"></div>
+        <div class="hero__slide" style="background-image:url('assets/images/103.jpg');"></div>
+        <div class="hero__slide" style="background-image:url('assets/images/104.jpg');"></div>
+      </div>
       <div class="hero__overlay"></div>
       <div class="hero__content">
-        <p class="hero__label">Bem-vindo</p>
-        <h2 class="hero__title">Seu parceiro em desempenho</h2>
-        <p class="hero__subtitle">Soluções turnkey para granéis sólidos, reciclagem de metais e dragagem.</p>
+        <div>
+          <p class="hero__label">Bem-vindo</p>
+          <h2 class="hero__title">Seu parceiro em desempenho</h2>
+          <p class="hero__subtitle">Soluções turnkey para granéis sólidos, reciclagem de metais e dragagem.</p>
+        </div>
+      </div>
+      <div class="hero__indicators" aria-hidden="true"></div>
+    </div>
+
+    <!-- HERO ESTÁTICO (sem indicadores) -->
+    <div class="hero" data-hero-mode="static" style="margin-top:24px;">
+      <div class="hero__slides" aria-hidden="true">
+        <div class="hero__slide is-active" style="background-image:url('assets/images/102.jpg');"></div>
+      </div>
+      <div class="hero__overlay"></div>
+      <div class="hero__content">
+        <div>
+          <p class="hero__label">Bem-vindo</p>
+          <h2 class="hero__title">Seu parceiro em desempenho</h2>
+          <p class="hero__subtitle">Soluções turnkey para granéis sólidos, reciclagem de metais e dragagem.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -493,36 +572,54 @@
     <p class="sg-section__label">09</p>
     <h2 class="sg-section__title">Accordion — FAQ</h2>
 
-    <!-- Aberto -->
-    <div class="accordion">
-      <div class="accordion__trigger touchable" onclick="this.parentElement.querySelector('.accordion__content').style.display = this.parentElement.querySelector('.accordion__content').style.display === 'none' ? 'block' : 'none'">
-        <span class="accordion__question">O E-Crane oferece suporte técnico no Brasil?</span>
+    <!-- Item 1 — aberto por padrão -->
+    <div class="accordion is-open">
+      <button class="accordion__trigger touchable" aria-expanded="true">
+        <span class="accordion__question">A E-Crane oferece suporte técnico no Brasil?</span>
         <span class="accordion__icon">
-          <svg viewBox="0 0 24 24" fill="none"><mask id="mau" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"><rect width="24" height="24" fill="#D9D9D9"/></mask><g mask="url(#mau)"><path d="M7.59619 13.7499L11.9999 9.34619L16.4037 13.7499H7.59619Z" fill="#FFFFFF"/></g></svg>
+          <img src="assets/icons/arrow_drop_down.svg" alt="" aria-hidden="true">
         </span>
-      </div>
-      <div class="accordion__content">
-        Sim. A E-Crane possui representação técnica no Brasil com sede em Santos, SP. Nossa equipe local oferece suporte pós-venda, treinamento operacional e assistência em campo para todos os equipamentos instalados na América do Sul.
-      </div>
-    </div>
-
-    <!-- Fechado -->
-    <div class="accordion">
-      <div class="accordion__trigger touchable">
-        <span class="accordion__question">Qual é o prazo médio de entrega de um equipamento?</span>
-        <span class="accordion__icon">
-          <svg viewBox="0 0 24 24" fill="none"><mask id="mad" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"><rect width="24" height="24" fill="#D9D9D9"/></mask><g mask="url(#mad)"><path d="M11.9999 14.6537L7.59619 10.25H16.4037L11.9999 14.6537Z" fill="#FFFFFF"/></g></svg>
-        </span>
+      </button>
+      <div class="accordion__body">
+        <div class="accordion__content">
+          <div class="accordion__content-inner">
+            Sim. Em 2025, inauguramos o centro de serviços E-Crane Brasil, localizado em Santos - SP. Nossa equipe local oferece suporte técnico especializado, manutenção preventiva, fornecimento de peças de reposição e treinamento de operadores.
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- Fechado -->
+    <!-- Item 2 — fechado -->
     <div class="accordion">
-      <div class="accordion__trigger touchable">
-        <span class="accordion__question">Os equipamentos E-Crane são certificados para operação portuária?</span>
+      <button class="accordion__trigger touchable" aria-expanded="false">
+        <span class="accordion__question">O que é o E-Crane e como ele funciona?</span>
         <span class="accordion__icon">
-          <svg viewBox="0 0 24 24" fill="none"><mask id="mad2" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"><rect width="24" height="24" fill="#D9D9D9"/></mask><g mask="url(#mad2)"><path d="M11.9999 14.6537L7.59619 10.25H16.4037L11.9999 14.6537Z" fill="#FFFFFF"/></g></svg>
+          <img src="assets/icons/arrow_drop_down.svg" alt="" aria-hidden="true">
         </span>
+      </button>
+      <div class="accordion__body">
+        <div class="accordion__content">
+          <div class="accordion__content-inner">
+            O E-Crane é um guindaste tipo grab com design de equilíbrio único, reconhecido internacionalmente como EQUILIBRIUM CRANE®. Seu sistema de contrapeso móvel compensa automaticamente metade da carga içada — resultando em até 75% menos consumo de energia que equipamentos convencionais.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 3 — fechado -->
+    <div class="accordion">
+      <button class="accordion__trigger touchable" aria-expanded="false">
+        <span class="accordion__question">Qual é a vida útil esperada de um E-Crane?</span>
+        <span class="accordion__icon">
+          <img src="assets/icons/arrow_drop_down.svg" alt="" aria-hidden="true">
+        </span>
+      </button>
+      <div class="accordion__body">
+        <div class="accordion__content">
+          <div class="accordion__content-inner">
+            Com manutenção adequada, os E-Cranes são projetados para operar por mais de 20 anos e ultrapassar 100.000 horas de trabalho. O design equilibrado reduz o desgaste dos componentes e amplia os intervalos de manutenção.
+          </div>
+        </div>
       </div>
     </div>
   </div>

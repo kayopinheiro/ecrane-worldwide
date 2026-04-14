@@ -1,0 +1,306 @@
+/* ============================================================
+   home.css — E-CRANE Totem · Página Início
+   ============================================================ */
+
+.home-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg);
+}
+
+.home {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0 24px;
+  padding-bottom: 0;
+  max-width: 1272px; /* 1224px content + 2×24px padding */
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ── Hero ───────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  height: 425px;
+  overflow: hidden;
+  border-radius: 0 0 8px 8px;
+}
+
+.hero__slides {
+  position: absolute;
+  inset: 0;
+}
+
+.hero__slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.hero__slide.is-active {
+  opacity: 1;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(251.586deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.9) 100%);
+  border-radius: 0 0 8px 8px;
+}
+
+.hero__content {
+  position: absolute;
+  left: 44px;
+  bottom: 0;
+  top: 0;
+  width: 484px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 16px 0;
+}
+
+.hero__text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hero__labels {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #FFFFFF;
+  width: 442px;
+}
+
+.hero__label {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.hero__title {
+  font-size: 42px;
+  font-weight: 400;
+  color: #FFFFFF;
+  line-height: 1.2;
+  margin: 0;
+  width: 100%;
+}
+
+.hero__subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  color: #e1e1e1;
+  line-height: 1.5;
+  margin: 0;
+  width: 442px;
+}
+
+.hero__indicators {
+  position: absolute;
+  right: 44px;
+  bottom: 40px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px;
+  border-radius: 4px;
+  background: #FFFFFF;
+}
+
+.hero__indicator {
+  width: 8px;
+  height: 8px;
+  border: 0;
+  padding: 0;
+  border-radius: 2px;
+  background: #c1c1c1;
+  cursor: none;
+}
+
+.hero__indicator.is-active {
+  background: #000000;
+}
+
+/* ── Bento Grid ─────────────────────────────────────────────── */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 24px;
+  padding-bottom: 24px;
+}
+
+.bento-grid .card:nth-child(-n+3) {
+  grid-column: span 2;
+}
+
+.bento-grid .card:nth-child(n+4) {
+  grid-column: span 3;
+}
+
+/* ── Card Component ─────────────────────────────────────────── */
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 262px;
+  padding: 32px;
+  background: #FFFFFF;
+  border: 1px solid rgba(152, 156, 159, 0.2);
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 150ms ease, opacity 150ms ease;
+}
+
+.card:active {
+  transform: scale(0.98);
+  opacity: 0.95;
+}
+
+.card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.card__icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F5F5F5;
+  border-radius: 4px;
+  padding: 12px;
+  flex-shrink: 0;
+}
+
+.card__icon img {
+  width: 24px;
+  height: 24px;
+}
+
+.card__arrow {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+.card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  width: 100%;
+}
+
+.card__label {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #1a171b;
+  display: block;
+}
+
+.card__detail {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #989c9f;
+  display: block;
+}
+
+/* ── Footer ─────────────────────────────────────────────────── */
+.page-footer {
+  background: #FFFFFF;
+  border-top: 1px solid rgba(152, 156, 159, 0.2);
+  border-left: 1px solid rgba(152, 156, 159, 0.2);
+  border-right: 1px solid rgba(152, 156, 159, 0.2);
+  border-radius: 8px 8px 0 0;
+  margin: 0 24px;
+  max-width: calc(1272px - 48px);
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(100% - 48px);
+}
+
+.page-footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 65px;
+}
+
+.page-footer__copy,
+.page-footer__credit {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #000000;
+}
+
+.page-footer__credit strong {
+  font-weight: 700;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bento-grid .card:nth-child(-n+3),
+  .bento-grid .card:nth-child(n+4) {
+    grid-column: span 1;
+  }
+
+  .hero__title {
+    font-size: 32px;
+  }
+
+  .hero__content {
+    left: 24px;
+    width: calc(100% - 48px);
+  }
+
+  .hero__labels,
+  .hero__subtitle {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .home {
+    padding: 16px;
+  }
+
+  .bento-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .bento-grid .card:nth-child(n) {
+    grid-column: 1 / -1;
+  }
+
+  .card {
+    height: auto;
+    min-height: 200px;
+  }
+}
