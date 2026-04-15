@@ -5,10 +5,10 @@
 
 .accordion {
   background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: 12px;
+  border: 1px solid rgba(152, 156, 159, 0.2);
+  border-radius: 8px;
   overflow: hidden;
-  margin-bottom: 8px;
+  margin-bottom: 24px;
 }
 
 /* ── Trigger (cabeçalho clicável) ──────────────────────────── */
@@ -17,12 +17,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px;
+  padding: 32px;
   gap: 16px;
   font-family: var(--font-family);
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 140%;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
   color: var(--color-text-primary);
   background: transparent;
   border: none;
@@ -43,11 +43,9 @@
 
 /* ── Ícone ──────────────────────────────────────────────────── */
 .accordion__icon {
-  width: 24px;
-  height: 24px;
   background: var(--neutral-900);
-  border-radius: 6px;
-  padding: 4px;
+  border-radius: 4px;
+  padding: 8px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -56,8 +54,8 @@
 }
 
 .accordion__icon img {
-  width: 16px;
-  height: 16px;
+  width: 24px;
+  height: 24px;
   filter: brightness(0) invert(1);
   display: block;
 }
@@ -89,10 +87,9 @@
 }
 
 .accordion__content-inner {
-  padding: 20px 24px 24px;
-  border-top: 1px solid var(--color-border);
+  padding: 0 32px 32px;
   font-size: 16px;
   font-weight: 400;
-  color: var(--neutral-600);
-  line-height: 160%;
+  color: #989c9f;
+  line-height: 1.5;
 }

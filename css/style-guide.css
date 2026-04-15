@@ -251,10 +251,10 @@
   font-family: var(--font-family);
   font-size: var(--text-title-sm);
   font-weight: 500;
-  padding: 0 var(--space-6);
-  height: var(--btn-height-sm);
-  border-radius: var(--radius-md);
-  border: none;
+  padding: 20px 40px;
+  min-height: var(--btn-height-sm);
+  border-radius: 4px;
+  border: 1px solid rgba(152, 156, 159, 0.2);
   cursor: none;
   transition: transform 150ms ease;
   user-select: none;
@@ -266,10 +266,12 @@
   transform: scale(0.97);
 }
 
-.btn-secondary svg {
-  width: 18px;
-  height: 18px;
+.btn-secondary svg,
+.btn-secondary img {
+  width: 24px;
+  height: 24px;
   flex-shrink: 0;
+  filter: brightness(0) invert(1);
 }
 
 /* Botão voltar — fixo em subpáginas */

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introdução — Institucional e Cultura — E-CRANE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/topbar.css">
+  <link rel="stylesheet" href="css/institucional-intro.css">
+</head>
+<body class="intro-page page-enter">
+
+  <!-- ── Navbar ─────────────────────────────────────────────── -->
+  <header class="topbar" role="banner">
+    <div class="topbar__container">
+
+      <!-- Seletor de idioma -->
+      <div class="lang-picker">
+        <button class="lang touchable" id="language-trigger" type="button"
+                aria-label="Selecionar idioma" aria-haspopup="listbox" aria-expanded="false">
+          <img src="assets/icons/Brazil Icon.svg" alt="Bandeira do Brasil" class="lang__flag">
+          <span class="lang__label" data-lang-label>Portugues</span>
+          <img src="assets/icons/keyboard_arrow_down.svg" alt="" aria-hidden="true" class="lang__chevron">
+        </button>
+        <div class="lang-menu" id="language-menu" role="listbox" aria-label="Idiomas disponíveis">
+          <button class="lang-menu__item touchable is-selected" type="button" role="option"
+                  aria-selected="true" data-lang="pt-BR" data-lang-label="Portugues"
+                  data-lang-flag="assets/icons/Brazil Icon.svg" data-lang-flag-alt="Bandeira do Brasil">
+            <img src="assets/icons/Brazil Icon.svg" alt="" aria-hidden="true">
+            <span>Portugues</span>
+          </button>
+          <button class="lang-menu__item touchable" type="button" role="option"
+                  aria-selected="false" data-lang="en-US" data-lang-label="English"
+                  data-lang-flag="assets/icons/Estados Unidos.svg" data-lang-flag-alt="Bandeira dos Estados Unidos">
+            <img src="assets/icons/Estados Unidos.svg" alt="" aria-hidden="true">
+            <span>English</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Logo centralizado -->
+      <img src="assets/logos/logo-ecrane-black.svg" alt="E-CRANE" class="topbar__logo">
+
+      <!-- Direita: relógio + home -->
+      <div class="topbar__right">
+        <div class="clock" aria-label="Horário atual">
+          <img src="assets/icons/schedule.svg" alt="" aria-hidden="true" class="clock__icon">
+          <span id="totem-time">10:32</span>
+        </div>
+        <button class="home-btn touchable" type="button" aria-label="Início"
+                onclick="window.location.href='inicio.html'">
+          <img src="assets/icons/home.svg" alt="" aria-hidden="true">
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ── Conteúdo principal ─────────────────────────────────── -->
+  <main class="intro-main">
+
+    <!-- ── Breadcrumb ─────────────────────────────────────────── -->
+    <nav class="breadcrumb" aria-label="Navegação estrutural">
+      <a href="inicio.html" class="breadcrumb__link touchable">Início</a>
+      <img src="assets/icons/chevron_forward.svg" alt="" aria-hidden="true" class="breadcrumb__sep">
+      <a href="institucional.html" class="breadcrumb__link touchable">Institucional e Cultura</a>
+    </nav>
+
+    <!-- ── Coluna de conteúdo ─────────────────────────────────── -->
+    <div class="intro-col">
+
+      <div class="intro-header">
+        <h1 class="intro-title">Introdução</h1>
+        <hr class="intro-divider">
+      </div>
+
+      <div class="intro-body">
+
+        <p class="intro-text">
+          A E-Crane Worldwide é uma referência global no fornecimento de soluções turnkey para movimentação de granéis sólidos, reciclagem de metais e operações de dragagem. Fundada em 1990 por engenheiros especializados em equipamentos de grande porte, a empresa construiu uma sólida trajetória baseada em inovação contínua.
+        </p>
+
+        <!-- Imagem — E-Crane em operação portuária -->
+        <figure class="intro-media">
+          <img
+            src="assets/images/163.jpg"
+            alt="E-Crane em operação portuária"
+            loading="eager"
+            class="intro-media__img"
+          >
+        </figure>
+
+        <p class="intro-text">
+          Há mais de 35 anos, a E-Crane vem aperfeiçoando o EQUILIBRIUM CRANE — reconhecido internacionalmente como E-Crane® —, o guindaste tipo grab mais eficiente e confiável de sua categoria. Cada unidade contempla engenharia própria completa, fabricação, montagem, testes rigorosos e desenvolvimento integral da documentação técnica.
+        </p>
+
+        <p class="intro-text">
+          Com centros de serviços estrategicamente posicionados e uma rede global de distribuidores em constante expansão na Europa, Ásia e Américas, a E-Crane assegura elevada disponibilidade de peças de reposição e respostas técnicas ágeis. Guiada por um compromisso permanente com qualidade, eficiência e inovação, a E-Crane estabelece parcerias duradouras com clientes em todo o mundo.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- ── Botão Voltar ──────────────────────────────────────── -->
+    <div class="intro-actions">
+      <button class="btn-voltar touchable" type="button"
+              onclick="window.location.href='institucional.html'">
+        <img src="assets/icons/subdirectory_arrow_left.svg" alt="" aria-hidden="true">
+        <span>Voltar</span>
+      </button>
+    </div>
+
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────────── -->
+  <footer class="page-footer">
+    <div class="page-footer__inner">
+      <span class="page-footer__copy">© 2026 E-CRANE - Todos os direitos reservados</span>
+      <span class="page-footer__credit">Site desenvolvido por <strong>Mukutu</strong></span>
+    </div>
+  </footer>
+
+  <!-- ── Custom touch scrollbar ───────────────────────────────── -->
+  <div class="custom-scrollbar" id="custom-scrollbar" aria-hidden="true">
+    <button class="custom-scrollbar__btn" id="scroll-up" type="button" tabindex="-1">
+      <img src="assets/icons/arrow_drop_up.svg" alt="" aria-hidden="true">
+    </button>
+    <div class="custom-scrollbar__track" id="scroll-track">
+      <div class="custom-scrollbar__thumb" id="scroll-thumb">
+        <img src="assets/icons/drag_indicator.svg" alt="" aria-hidden="true">
+      </div>
+    </div>
+    <button class="custom-scrollbar__btn" id="scroll-down" type="button" tabindex="-1">
+      <img src="assets/icons/arrow_drop_down.svg" alt="" aria-hidden="true">
+    </button>
+  </div>
+
+  <script src="js/main.js"></script>
+
+  <!-- DEBUG CURSOR — remove before production -->
+  <script src="debug-cursor.js"></script>
+
+</body>
+</html>

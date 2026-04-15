@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Institucional e Cultura — E-CRANE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/topbar.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/institucional.css">
+</head>
+<body class="institucional-page page-enter">
+
+  <main class="institucional-wrap">
+
+    <!-- ── Hero estático ──────────────────────────────────────── -->
+    <section class="sec-hero" style="background-image: url('assets/images/30.jpg');">
+      <div class="sec-hero__overlay"></div>
+
+      <header class="topbar" role="banner">
+        <div class="topbar__container">
+
+          <!-- Seletor de idioma -->
+          <div class="lang-picker">
+            <button class="lang touchable" id="language-trigger" type="button"
+                    aria-label="Selecionar idioma" aria-haspopup="listbox" aria-expanded="false">
+              <img src="assets/icons/Brazil Icon.svg" alt="Bandeira do Brasil" class="lang__flag">
+              <span class="lang__label" data-lang-label>Portugues</span>
+              <img src="assets/icons/keyboard_arrow_down.svg" alt="" aria-hidden="true" class="lang__chevron">
+            </button>
+            <div class="lang-menu" id="language-menu" role="listbox" aria-label="Idiomas disponíveis">
+              <button class="lang-menu__item touchable is-selected" type="button" role="option"
+                      aria-selected="true" data-lang="pt-BR" data-lang-label="Portugues"
+                      data-lang-flag="assets/icons/Brazil Icon.svg" data-lang-flag-alt="Bandeira do Brasil">
+                <img src="assets/icons/Brazil Icon.svg" alt="" aria-hidden="true">
+                <span>Portugues</span>
+              </button>
+              <button class="lang-menu__item touchable" type="button" role="option"
+                      aria-selected="false" data-lang="en-US" data-lang-label="English"
+                      data-lang-flag="assets/icons/Estados Unidos.svg" data-lang-flag-alt="Bandeira dos Estados Unidos">
+                <img src="assets/icons/Estados Unidos.svg" alt="" aria-hidden="true">
+                <span>English</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Logo centralizado -->
+          <img src="assets/logos/logo-ecrane-black.svg" alt="E-CRANE" class="topbar__logo">
+
+          <!-- Direita: relógio + home -->
+          <div class="topbar__right">
+            <div class="clock" aria-label="Horário atual">
+              <img src="assets/icons/schedule.svg" alt="" aria-hidden="true" class="clock__icon">
+              <span id="totem-time">10:32</span>
+            </div>
+            <button class="home-btn touchable" type="button" aria-label="Início"
+                    onclick="window.location.href='inicio.html'">
+              <img src="assets/icons/home.svg" alt="" aria-hidden="true">
+            </button>
+          </div>
+
+        </div>
+      </header>
+
+      <!-- Texto do hero -->
+      <div class="sec-hero__content">
+        <div class="sec-hero__text">
+          <div class="sec-hero__labels">
+            <p class="sec-hero__label">Bem-vindo</p>
+            <h1 class="sec-hero__title">Institucional e Cultura</h1>
+          </div>
+          <p class="sec-hero__subtitle">
+            Referência global em soluções turnkey para granéis, reciclagem e dragagem.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Breadcrumb ──────────────────────────────────────────── -->
+    <nav class="breadcrumb" aria-label="Navegação estrutural">
+      <a href="inicio.html" class="breadcrumb__link touchable">Início</a>
+      <img src="assets/icons/chevron_forward.svg" alt="" aria-hidden="true" class="breadcrumb__sep">
+      <span class="breadcrumb__current" aria-current="page">Institucional e Cultura</span>
+    </nav>
+
+    <!-- ── Bento Grid — 4 subseções ───────────────────────────── -->
+    <nav class="inst-grid" aria-label="Subseções de Institucional e Cultura">
+
+      <!-- Introdução — larga (2 de 3 colunas) -->
+      <a href="institucional-intro.html" class="card card--wide touchable">
+        <div class="card__top">
+          <div class="card__icon">
+            <img src="assets/icons/travel_explore.svg" alt="" aria-hidden="true">
+          </div>
+          <img src="assets/icons/north_east.svg" alt="" aria-hidden="true" class="card__arrow">
+        </div>
+        <div class="card__text">
+          <span class="card__label">Introdução</span>
+          <span class="card__detail">Referência global em soluções turnkey para granéis, reciclagem e dragagem.</span>
+        </div>
+      </a>
+
+      <!-- Histórico e Expansão — estreita (1 de 3 colunas) -->
+      <a href="institucional-historico.html" class="card card--narrow touchable">
+        <div class="card__top">
+          <div class="card__icon">
+            <img src="assets/icons/event_list.svg" alt="" aria-hidden="true">
+          </div>
+          <img src="assets/icons/north_east.svg" alt="" aria-hidden="true" class="card__arrow">
+        </div>
+        <div class="card__text">
+          <span class="card__label">Histórico e Expansão</span>
+          <span class="card__detail">Trajetória desde 1990, com marcos na Europa, Américas e Ásia.</span>
+        </div>
+      </a>
+
+      <!-- Empresa Familiar — estreita (1 de 3 colunas) -->
+      <a href="institucional-familia.html" class="card card--narrow touchable">
+        <div class="card__top">
+          <div class="card__icon">
+            <img src="assets/icons/diversity_2.svg" alt="" aria-hidden="true">
+          </div>
+          <img src="assets/icons/north_east.svg" alt="" aria-hidden="true" class="card__arrow">
+        </div>
+        <div class="card__text">
+          <span class="card__label">Empresa Familiar</span>
+          <span class="card__detail">Valores da família Bauwens e foco em parcerias duradouras.</span>
+        </div>
+      </a>
+
+      <!-- Equipe e Talentos — larga (2 de 3 colunas) -->
+      <a href="institucional-equipe.html" class="card card--wide touchable">
+        <div class="card__top">
+          <div class="card__icon">
+            <img src="assets/icons/engineering.svg" alt="" aria-hidden="true">
+          </div>
+          <img src="assets/icons/north_east.svg" alt="" aria-hidden="true" class="card__arrow">
+        </div>
+        <div class="card__text">
+          <span class="card__label">Equipe e Talentos</span>
+          <span class="card__detail">Foco em "pessoas extraordinárias" por trás dos produtos.</span>
+        </div>
+      </a>
+
+    </nav>
+
+    <!-- ── Botão Voltar ────────────────────────────────────────── -->
+    <div class="inst-actions">
+      <button class="btn-voltar touchable" type="button"
+              onclick="window.location.href='inicio.html'">
+        <img src="assets/icons/subdirectory_arrow_left.svg" alt="" aria-hidden="true">
+        <span>Voltar</span>
+      </button>
+    </div>
+
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────────────── -->
+  <footer class="page-footer">
+    <div class="page-footer__inner">
+      <span class="page-footer__copy">© 2026 E-CRANE - Todos os direitos reservados</span>
+      <span class="page-footer__credit">Site desenvolvido por <strong>Mukutu</strong></span>
+    </div>
+  </footer>
+
+  <!-- ── Custom touch scrollbar ─────────────────────────────────── -->
+  <div class="custom-scrollbar" id="custom-scrollbar" aria-hidden="true">
+    <button class="custom-scrollbar__btn" id="scroll-up" type="button" tabindex="-1">
+      <img src="assets/icons/arrow_drop_up.svg" alt="" aria-hidden="true">
+    </button>
+    <div class="custom-scrollbar__track" id="scroll-track">
+      <div class="custom-scrollbar__thumb" id="scroll-thumb">
+        <img src="assets/icons/drag_indicator.svg" alt="" aria-hidden="true">
+      </div>
+    </div>
+    <button class="custom-scrollbar__btn" id="scroll-down" type="button" tabindex="-1">
+      <img src="assets/icons/arrow_drop_down.svg" alt="" aria-hidden="true">
+    </button>
+  </div>
+
+  <script src="js/main.js"></script>
+
+  <!-- DEBUG CURSOR — remove before production -->
+  <script src="debug-cursor.js"></script>
+
+</body>
+</html>

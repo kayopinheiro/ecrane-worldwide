@@ -1,0 +1,367 @@
+/* ============================================================
+   institucional.css — E-CRANE Totem · Institucional e Cultura
+   ============================================================ */
+
+/* ── Layout base ────────────────────────────────────────────── */
+.institucional-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg);
+}
+
+.institucional-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0 24px;
+  padding-bottom: 0;
+  max-width: 1272px; /* 1224px content + 2×24px padding */
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ── Hero estático ──────────────────────────────────────────── */
+.sec-hero {
+  position: relative;
+  height: 425px;
+  overflow: hidden;
+  border-radius: 0 0 8px 8px;
+  background-size: cover;
+  background-position: center 35%;
+  background-repeat: no-repeat;
+}
+
+.sec-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(251.586deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.9) 100%);
+  border-radius: 0 0 8px 8px;
+  z-index: 1;
+}
+
+/* Topbar dentro do hero — mesmo padrão de inicio.html */
+.sec-hero > .topbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  padding: 0 40px;
+}
+
+.sec-hero > .topbar .topbar__container {
+  border-top: 1px solid rgba(152, 156, 159, 0.2);
+}
+
+/* Conteúdo do hero */
+.sec-hero__content {
+  position: absolute;
+  left: 44px;
+  top: 0;
+  bottom: 0;
+  width: 484px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 16px 0;
+}
+
+.sec-hero__text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sec-hero__labels {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #FFFFFF;
+  width: 442px;
+}
+
+.sec-hero__label {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.sec-hero__title {
+  font-size: 42px;
+  font-weight: 400;
+  color: #FFFFFF;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.sec-hero__subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  color: #e1e1e1;
+  line-height: 1.5;
+  margin: 0;
+  width: 442px;
+}
+
+/* ── Breadcrumb ─────────────────────────────────────────────── */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.breadcrumb__link {
+  font-size: 16px;
+  font-weight: 500;
+  color: #818181;
+  text-decoration: none;
+  line-height: 1.5;
+  padding: 4px 2px;
+  border-radius: 4px;
+  transition: color 150ms;
+}
+
+.breadcrumb__link:active {
+  color: var(--color-text-primary);
+}
+
+.breadcrumb__sep {
+  width: 16px;
+  height: 16px;
+  opacity: 0.45;
+  flex-shrink: 0;
+}
+
+.breadcrumb__current {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  line-height: 1.5;
+}
+
+/* ── Bento Grid — 3 colunas ─────────────────────────────────── */
+.inst-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Card base — herda estilos de home.css */
+.inst-grid .card {
+  height: 262px;
+}
+
+/* Larga: 2 de 3 colunas */
+.inst-grid .card--wide {
+  grid-column: span 2;
+}
+
+/* Estreita: 1 de 3 colunas */
+.inst-grid .card--narrow {
+  grid-column: span 1;
+}
+
+/* ── Linha de ação (botão Voltar) ────────────────────────────── */
+.inst-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 24px;
+}
+
+.btn-voltar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 72px;
+  padding: 0 40px;
+  background: #1a171b;
+  color: #FFFFFF;
+  border: 1px solid rgba(152, 156, 159, 0.2);
+  border-radius: 4px;
+  font: 500 16px/1.5 var(--font-family);
+  white-space: nowrap;
+  transition: transform 150ms ease, opacity 150ms ease;
+}
+
+.btn-voltar:active {
+  transform: scale(0.97);
+  opacity: 0.95;
+}
+
+.btn-voltar img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
+
+/* ── Footer ─────────────────────────────────────────────────── */
+.page-footer {
+  background: #FFFFFF;
+  border-top: 1px solid rgba(152, 156, 159, 0.2);
+  border-left: 1px solid rgba(152, 156, 159, 0.2);
+  border-right: 1px solid rgba(152, 156, 159, 0.2);
+  border-radius: 8px 8px 0 0;
+  width: calc(100% - 48px);
+  max-width: calc(1272px - 48px);
+  margin: 0 auto;
+}
+
+.page-footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 65px;
+}
+
+.page-footer__copy,
+.page-footer__credit {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #000000;
+}
+
+.page-footer__credit strong {
+  font-weight: 700;
+}
+
+/* ── Custom Touch Scrollbar ─────────────────────────────────── */
+.custom-scrollbar {
+  position: fixed;
+  right: 16px;
+  top: 80px;
+  bottom: 80px;
+  width: 51px;
+  background: #FFFFFF;
+  border: 1px solid rgba(152, 156, 159, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px;
+  gap: 8px;
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease;
+}
+
+.custom-scrollbar.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.custom-scrollbar__btn {
+  width: 35px;
+  height: 40px;
+  border: none;
+  background: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: none;
+  border-radius: 4px;
+  flex-shrink: 0;
+  transition: background 150ms ease;
+}
+
+.custom-scrollbar__btn:active {
+  background: #f5f5f5;
+  transform: scale(0.95);
+}
+
+.custom-scrollbar__btn img {
+  width: 24px;
+  height: 24px;
+  opacity: 0.45;
+}
+
+.custom-scrollbar__track {
+  flex: 1;
+  width: 35px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.custom-scrollbar__thumb {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  min-height: 56px;
+  background: #1a171b;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 8px;
+  touch-action: none;
+  cursor: none;
+}
+
+.custom-scrollbar__thumb:active {
+  background: #262626;
+}
+
+.custom-scrollbar__thumb img {
+  width: 20px;
+  height: 20px;
+  filter: invert(1);
+  opacity: 0.55;
+}
+
+/* ── Responsivo ─────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .inst-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .inst-grid .card--wide,
+  .inst-grid .card--narrow {
+    grid-column: span 1;
+  }
+
+  .sec-hero__title {
+    font-size: 32px;
+  }
+
+  .sec-hero__content {
+    left: 24px;
+    width: calc(100% - 48px);
+  }
+
+  .sec-hero__subtitle {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .institucional-wrap {
+    padding: 0 16px;
+  }
+
+  .inst-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .inst-grid .card--wide,
+  .inst-grid .card--narrow {
+    grid-column: 1 / -1;
+  }
+
+  .inst-grid .card {
+    height: auto;
+    min-height: 200px;
+  }
+}

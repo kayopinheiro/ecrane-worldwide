@@ -1,0 +1,305 @@
+/* ============================================================
+   suporte.css — E-CRANE Totem · Suporte e Contato
+   ============================================================ */
+
+/* ── Layout base ────────────────────────────────────────────── */
+.suporte-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg);
+}
+
+/* ── Topbar ─────────────────────────────────────────────────── */
+.suporte-page > .topbar {
+  position: relative;
+  z-index: 60;
+  width: min(1224px, calc(100vw - 48px));
+  margin: 0 auto;
+}
+
+/* ── Conteúdo principal ─────────────────────────────────────── */
+.suporte-main {
+  flex: 1;
+  width: min(1224px, calc(100vw - 48px));
+  margin: 0 auto;
+  padding-top: var(--space-10);
+  padding-bottom: var(--space-20);
+}
+
+/* ── Breadcrumb ─────────────────────────────────────────────── */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: var(--space-10);
+}
+
+.breadcrumb__link {
+  font-size: var(--text-body-md);
+  font-weight: 500;
+  color: var(--neutral-500);
+  text-decoration: none;
+  line-height: 1.5;
+  transition: color 150ms;
+}
+
+.breadcrumb__link:active {
+  color: var(--color-text-primary);
+}
+
+.breadcrumb__sep {
+  width: 16px;
+  height: 16px;
+  opacity: 0.45;
+  flex-shrink: 0;
+}
+
+.breadcrumb__current {
+  font-size: var(--text-body-md);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  line-height: 1.5;
+}
+
+/* ── Cabeçalho da página ─────────────────────────────────────── */
+.suporte-header {
+  margin-bottom: var(--space-12);
+}
+
+.suporte-header__title {
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--color-text-primary);
+}
+
+/* ── Coluna de conteúdo (centrada, alinhada ao Figma) ────────── */
+.suporte-col {
+  max-width: 808px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Seção FAQ ──────────────────────────────────────────────── */
+.faq-section {
+  margin-bottom: var(--space-12);
+}
+
+/* ── Seção Rede Global ──────────────────────────────────────── */
+.contacts-section__title {
+  font-size: var(--text-heading-sm);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-6);
+}
+
+.contacts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+/* Cartão de escritório */
+.office-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-card);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.office-card:active {
+  transform: scale(0.985);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+.office-card__name {
+  font-size: var(--text-title-md);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-3);
+  line-height: 1.3;
+}
+
+.office-card__detail {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  font-size: var(--text-body-md);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin-bottom: var(--space-2);
+}
+
+.office-card__detail:last-child {
+  margin-bottom: 0;
+}
+
+.office-card__detail svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  opacity: 0.5;
+}
+
+.office-card__detail a {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+}
+
+/* Card HQ — destaque sutil */
+.office-card--hq {
+  grid-column: 1 / -1;
+  background: var(--neutral-900);
+  border-color: var(--neutral-900);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.16), 0 8px 24px rgba(0,0,0,0.10);
+}
+
+.office-card--hq .office-card__name {
+  color: var(--neutral-0);
+}
+
+.office-card--hq .office-card__detail {
+  color: var(--neutral-400);
+}
+
+.office-card--hq .office-card__detail a {
+  color: var(--neutral-400);
+}
+
+.office-card--hq .office-card__detail svg {
+  opacity: 0.4;
+}
+
+/* ── Botão Voltar ────────────────────────────────────────────── */
+.back-btn-wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--space-6);
+  padding-bottom: var(--space-16);
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 20px 40px;
+  min-height: var(--btn-height-sm);
+  background: var(--color-btn-bg);
+  border: 1px solid rgba(152, 156, 159, 0.2);
+  border-radius: 4px;
+  font: 500 var(--text-title-sm) / 1.5 var(--font-family);
+  color: var(--color-btn-text);
+  text-decoration: none;
+  transition: transform 150ms ease, opacity 150ms ease;
+}
+
+.back-btn:active {
+  transform: scale(0.97);
+  opacity: 0.9;
+}
+
+.back-btn img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
+
+/* ── Footer ─────────────────────────────────────────────────── */
+.page-footer {
+  background: var(--color-surface);
+  border-top: 1px solid rgba(152, 156, 159, 0.2);
+  border-radius: 8px 8px 0 0;
+  margin: 0 var(--space-20);
+}
+
+.page-footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px var(--space-6);
+}
+
+.page-footer__copy,
+.page-footer__credit {
+  font-size: var(--text-body-sm);
+  color: var(--color-text-primary);
+  line-height: 1.5;
+}
+
+/* ── Custom scrollbar (partilhado — garante visibilidade) ────── */
+.custom-scrollbar {
+  position: fixed;
+  right: 8px;
+  top: 88px;
+  bottom: 8px;
+  width: 51px;
+  background: var(--color-surface);
+  border: 1px solid rgba(152, 156, 159, 0.2);
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-4) var(--space-2);
+  gap: var(--space-2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease;
+  z-index: 50;
+}
+
+.custom-scrollbar.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.custom-scrollbar__btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: none;
+  transition: background 120ms;
+}
+
+.custom-scrollbar__btn:active {
+  background: var(--neutral-100);
+}
+
+.custom-scrollbar__btn img {
+  width: 24px;
+  height: 24px;
+}
+
+.custom-scrollbar__track {
+  flex: 1;
+  width: 100%;
+  position: relative;
+}
+
+.custom-scrollbar__thumb {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36px;
+  background: var(--neutral-900);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4) var(--space-2);
+  cursor: none;
+  transition: top 50ms linear;
+}
+
+.custom-scrollbar__thumb img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}

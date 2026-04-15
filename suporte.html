@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suporte e Contato — E-CRANE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/topbar.css">
+  <link rel="stylesheet" href="css/accordion.css">
+  <link rel="stylesheet" href="css/suporte.css">
+</head>
+<body class="suporte-page page-enter">
+
+  <!-- ── Navbar ─────────────────────────────────────────────── -->
+  <header class="topbar" role="banner">
+    <div class="topbar__container">
+      <div class="lang-picker">
+        <button class="lang touchable" id="language-trigger" type="button"
+                aria-label="Selecionar idioma" aria-haspopup="listbox" aria-expanded="false">
+          <img src="assets/icons/Brazil Icon.svg" alt="Bandeira do Brasil" class="lang__flag">
+          <span class="lang__label" data-lang-label>Portugues</span>
+          <img src="assets/icons/keyboard_arrow_down.svg" alt="" aria-hidden="true" class="lang__chevron">
+        </button>
+        <div class="lang-menu" id="language-menu" role="listbox" aria-label="Idiomas disponíveis">
+          <button class="lang-menu__item touchable is-selected" type="button" role="option"
+                  aria-selected="true" data-lang="pt-BR" data-lang-label="Portugues"
+                  data-lang-flag="assets/icons/Brazil Icon.svg" data-lang-flag-alt="Bandeira do Brasil">
+            <img src="assets/icons/Brazil Icon.svg" alt="" aria-hidden="true">
+            <span>Portugues</span>
+          </button>
+          <button class="lang-menu__item touchable" type="button" role="option"
+                  aria-selected="false" data-lang="en-US" data-lang-label="English"
+                  data-lang-flag="assets/icons/Estados Unidos.svg" data-lang-flag-alt="Bandeira dos Estados Unidos">
+            <img src="assets/icons/Estados Unidos.svg" alt="" aria-hidden="true">
+            <span>English</span>
+          </button>
+        </div>
+      </div>
+
+      <img src="assets/logos/logo-ecrane-black.svg" alt="E-CRANE" class="topbar__logo">
+
+      <div class="topbar__right">
+        <div class="clock" aria-label="Horário atual">
+          <img src="assets/icons/schedule.svg" alt="" aria-hidden="true" class="clock__icon">
+          <span id="totem-time">10:32</span>
+        </div>
+        <button class="home-btn touchable" type="button" aria-label="Início"
+                onclick="window.location.href='inicio.html'">
+          <img src="assets/icons/home.svg" alt="" aria-hidden="true">
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Conteúdo ───────────────────────────────────────────── -->
+  <main class="suporte-main">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Navegação estrutural">
+      <a href="inicio.html" class="breadcrumb__link touchable">Início</a>
+      <img src="assets/icons/chevron_forward.svg" alt="" aria-hidden="true" class="breadcrumb__sep">
+      <span class="breadcrumb__current" aria-current="page">Suporte e Contato</span>
+    </nav>
+
+    <!-- Coluna de conteúdo -->
+    <div class="suporte-col">
+
+      <!-- Cabeçalho -->
+      <header class="suporte-header">
+        <h1 class="suporte-header__title">Suporte e Contato</h1>
+      </header>
+
+      <!-- FAQ -->
+      <section class="faq-section" aria-label="Perguntas Frequentes">
+
+        <!-- Item 1 — aberto por padrão -->
+        <div class="accordion is-open" role="region">
+          <button class="accordion__trigger touchable" aria-expanded="true">
+            <span class="accordion__question">O que é o E-Crane e como ele funciona?</span>
+            <span class="accordion__icon" aria-hidden="true">
+              <img src="assets/icons/keyboard_arrow_down.svg" alt="">
+            </span>
+          </button>
+          <div class="accordion__body">
+            <div class="accordion__content">
+              <div class="accordion__content-inner">
+                O E-Crane é um guindaste tipo grab com design de equilíbrio único, reconhecido
+                internacionalmente como EQUILIBRIUM CRANE®. Seu sistema de contrapeso móvel,
+                conectado mecanicamente ao braço por um mecanismo de quatro barras, compensa
+                automaticamente metade da carga içada em qualquer alcance operacional —
+                resultando em até 75% menos consumo de energia que equipamentos convencionais.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="accordion" role="region">
+          <button class="accordion__trigger touchable" aria-expanded="false">
+            <span class="accordion__question">Quais tipos de materiais o E-Crane pode movimentar?</span>
+            <span class="accordion__icon" aria-hidden="true">
+              <img src="assets/icons/keyboard_arrow_down.svg" alt="">
+            </span>
+          </button>
+          <div class="accordion__body">
+            <div class="accordion__content">
+              <div class="accordion__content-inner">
+                O E-Crane é projetado para movimentar uma ampla gama de materiais: sucata
+                metálica (aço, ferro, alumínio, cobre), granéis sólidos (minérios, grãos,
+                carvão, cimento, biomassa), materiais de dragagem subaquática e granéis em
+                contêineres (CBH). Cada aplicação pode ser configurada com o grab e a base
+                mais adequados.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="accordion" role="region">
+          <button class="accordion__trigger touchable" aria-expanded="false">
+            <span class="accordion__question">Qual é a vida útil esperada de um E-Crane?</span>
+            <span class="accordion__icon" aria-hidden="true">
+              <img src="assets/icons/keyboard_arrow_down.svg" alt="">
+            </span>
+          </button>
+          <div class="accordion__body">
+            <div class="accordion__content">
+              <div class="accordion__content-inner">
+                Com manutenção adequada, os E-Cranes são projetados para operar por mais de
+                20 anos e ultrapassar 100.000 horas de trabalho. O design equilibrado reduz
+                o desgaste dos componentes e amplia os intervalos de manutenção, diminuindo
+                os custos ao longo de toda a vida útil do equipamento.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="accordion" role="region">
+          <button class="accordion__trigger touchable" aria-expanded="false">
+            <span class="accordion__question">A E-Crane oferece suporte técnico no Brasil?</span>
+            <span class="accordion__icon" aria-hidden="true">
+              <img src="assets/icons/keyboard_arrow_down.svg" alt="">
+            </span>
+          </button>
+          <div class="accordion__body">
+            <div class="accordion__content">
+              <div class="accordion__content-inner">
+                Sim. Em 2025, inauguramos o centro de serviços E-Crane Brasil, localizado em
+                Santos&nbsp;— SP. Nossa equipe local oferece suporte técnico especializado,
+                manutenção preventiva, fornecimento de peças de reposição e treinamento de
+                operadores. Para contato: southamerica@e-crane.com | +55&nbsp;(11)&nbsp;99665&nbsp;8001
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="accordion" role="region">
+          <button class="accordion__trigger touchable" aria-expanded="false">
+            <span class="accordion__question">O que é a plataforma E-Care?</span>
+            <span class="accordion__icon" aria-hidden="true">
+              <img src="assets/icons/keyboard_arrow_down.svg" alt="">
+            </span>
+          </button>
+          <div class="accordion__body">
+            <div class="accordion__content">
+              <div class="accordion__content-inner">
+                O E-Care é nossa plataforma de monitoramento baseada em nuvem, que oferece
+                acesso em tempo real aos dados de operação do guindaste. Com um banco de
+                dados centralizado, o E-Care permite análise de performance, monitoramento
+                remoto e suporte técnico integrado — 24 horas por dia, 7 dias por semana.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Botão Voltar -->
+      <div class="back-btn-wrap">
+        <a href="inicio.html" class="back-btn touchable" aria-label="Voltar para Início">
+          <img src="assets/icons/subdirectory_arrow_left.svg" alt="" aria-hidden="true">
+          Voltar
+        </a>
+      </div>
+
+    </div><!-- /.suporte-col -->
+  </main>
+
+  <!-- ── Footer ───────────────────────────────────────────── -->
+  <footer class="page-footer">
+    <div class="page-footer__inner">
+      <span class="page-footer__copy">© 2026 E-CRANE - Todos os direitos reservados</span>
+      <span class="page-footer__credit">Site desenvolvido por <strong>Mukutu</strong></span>
+    </div>
+  </footer>
+
+  <!-- ── Custom touch scrollbar ───────────────────────────── -->
+  <div class="custom-scrollbar" id="custom-scrollbar" aria-hidden="true">
+    <button class="custom-scrollbar__btn" id="scroll-up" type="button" tabindex="-1">
+      <img src="assets/icons/arrow_drop_up.svg" alt="" aria-hidden="true">
+    </button>
+    <div class="custom-scrollbar__track" id="scroll-track">
+      <div class="custom-scrollbar__thumb" id="scroll-thumb">
+        <img src="assets/icons/drag_indicator.svg" alt="" aria-hidden="true">
+      </div>
+    </div>
+    <button class="custom-scrollbar__btn" id="scroll-down" type="button" tabindex="-1">
+      <img src="assets/icons/arrow_drop_down.svg" alt="" aria-hidden="true">
+    </button>
+  </div>
+
+  <script src="js/main.js"></script>
+
+  <!-- DEBUG CURSOR — remove before production -->
+  <script src="debug-cursor.js"></script>
+
+</body>
+</html>
